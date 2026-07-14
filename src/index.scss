@@ -1,0 +1,29 @@
+@use './styles/fonts';
+
+:root {
+  --font-family: "DM Sans", sans-serif;
+  --second-family: "Plus Jakarta Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fe;
+  font-family: var(--font-family);
+}
