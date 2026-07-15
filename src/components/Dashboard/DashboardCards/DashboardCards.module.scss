@@ -1,0 +1,106 @@
+.listCards {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+
+    width: 248px;
+    height: 95px;
+
+    border-radius: 20px;
+    background: #fff;
+    gap: 18px;
+}
+
+.cardImg {
+    width: 56px;
+    height: 56px;
+}
+
+.rightSite {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    margin-left: 32px;
+}
+
+.cardDetails {}
+
+.cardTitle {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 171%;
+    letter-spacing: -0.02em;
+    color: #a3aed0;
+}
+
+.cardValue {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    letter-spacing: -0.02em;
+    color: #2b3674;
+}
+
+.change {
+    display: flex;
+    gap: 4px;
+}
+
+.changePercent {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 167%;
+    letter-spacing: -0.02em;
+    color: #05cd99;
+}
+
+.changeText {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 167%;
+    letter-spacing: -0.02em;
+    color: #a3aed0;
+}
+
+.dropdown {
+    // 1. Сбрасываем дефолтный вид браузера (убирает рамку и стандартную стрелку)
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    // 2. Стилизуем текст в тон твоему проекту
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 14px;
+    color: #2b3674; // твой фирменный темно-синий
+
+    // 3. Делаем отступ справа, чтобы текст не наезжал на стрелочку
+    padding-right: 20px;
+    padding-left: 4px;
+
+    // 4. Добавляем свою аккуратную стрелочку-галочку (chevron) через background
+    // Этот SVG-код сразу покрашен в цвет текста (%232b3674 — это hex-код #2b3674)
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232b3674' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 12px; // размер нашей стрелочки
+}
