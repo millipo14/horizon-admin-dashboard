@@ -13,7 +13,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/styles/helpers/functions" as *;\n`,
+        additionalData: `@use "@/styles/helpers" as *;\n`,
       },
     },
   },

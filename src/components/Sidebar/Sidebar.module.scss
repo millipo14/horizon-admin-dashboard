@@ -1,5 +1,6 @@
 .sidebar {
-    width: rem(310);
+    flex: 0 0 fluid(190, 310);
+    width: fluid(190, 310);
     min-height: 100dvh;
 
     display: flex;
@@ -10,11 +11,11 @@
 }
 
 .title {
-    margin: rem(55) 0;
+    margin: fluid(25, 55) 0;
 
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: rem(26);
+    font-size: fluid(18, 26);
     line-height: 1;
     color: var(--color-dark-blue);
     text-align: center;
@@ -34,21 +35,24 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: rem(20);
+    gap: fluid(12, 20);
 
-    padding-top: rem(38);
-    padding-left: rem(31);
+    padding-top: fluid(25, 38);
+    padding-left: fluid(15, 31);
+    padding-right: rem(10);
 }
 
 .link {
     display: flex;
     align-items: center;
-    gap: rem(12);
+    gap: fluid(8, 12);
 
     transition: all 0.3s ease;
 }
 
 .icon {
+    flex-shrink: 0;
+
     color: #a3aed0;
     fill: currentColor;
 
@@ -58,7 +62,7 @@
 .subtitle {
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: rem(16);
+    font-size: fluid(13, 16);
     line-height: 1.88;
     letter-spacing: -0.02em;
     color: #a3aed0;
@@ -76,26 +80,78 @@
     fill: currentColor;
 }
 
+
+/* PRO */
+
 .pro {
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
     margin-top: auto;
-    padding: rem(25) rem(31);
+    margin-left: fluid(12, 25);
+    margin-right: fluid(12, 25);
+    margin-bottom: fluid(12, 25);
 }
 
 .proIcon {
     display: block;
+
+    width: 100%;
+    height: auto;
 }
 
 .getProIcon {
     position: absolute;
-    top: rem(75);
-    left: rem(125);
+
+    top: fluid(30, 65);
+    left: fluid(65, 110);
 
     display: block;
+
     pointer-events: none;
+}
+
+
+/* 576px */
+
+@include sm {
+    .list {
+        padding-right: rem(12);
+    }
+}
+
+
+/* 768px */
+
+@include md {
+    .list {
+        padding-right: rem(15);
+    }
+}
+
+
+/* 1024px */
+
+@include lg {
+    .sidebar {
+        flex-basis: fluid(240, 310);
+    }
+}
+
+
+/* 1240px */
+
+@include xl {
+    .sidebar {
+        flex-basis: fluid(280, 310);
+    }
+}
+
+
+/* 1600px */
+
+@include xxl {
+    .sidebar {
+        flex-basis: rem(310);
+        width: rem(310);
+    }
 }
