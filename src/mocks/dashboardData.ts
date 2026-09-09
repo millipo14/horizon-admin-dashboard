@@ -4,18 +4,7 @@ import balanceIcon from '../assets/dashboard/cardIcons/balance.png'
 import tasksIcon from '../assets/dashboard/cardIcons/tasks.svg'
 import projectsIcon from '../assets/dashboard/cardIcons/projects.svg'
 
-export interface DashboardCards {
-    id: number
-    type: 'earnings' | 'spend' | 'sales' | 'balance' | 'tasks' | 'projects'
-    title: string
-    value: number | string
-    icon?: string
-    change?: {
-        percent: string
-        text: string
-    }
-    additionalElement?: 'dropdown' | null
-}
+import type { DashboardCards } from '../types/mocksTypes'
 
 export const dashboardCardsData: DashboardCards[] = [
     {

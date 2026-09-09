@@ -1,9 +1,11 @@
 .searchAndDetails {
     border-radius: 30px;
-    width: 422px;
-    height: 61px;
+    width: 100%;
+    max-width: 422px;
+    min-height: 61px;
     box-shadow: 14px 17px 40px 4px rgba(112, 144, 176, 0.08);
     background: #fff;
+    margin-left: auto;
 }
 
 .details {
@@ -11,22 +13,40 @@
     padding: 10px;
     align-items: center;
     gap: 20px;
+
+    /* Постепенно поджимаем gap при сужении до 1000px */
+    @media (max-width: 1000px) {
+        gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+        gap: 8px;
+        padding: 8px;
+    }
 }
 
 .search {
     position: relative;
-    width: 214px;
+    /* Разрешаем блоку сжиматься ниже 1000px, но не расти больше 214px */
+    flex: 1 1 auto;
+    max-width: 214px;
+    min-width: 120px;
+    /* Чтобы инпут не сжался в ноль */
+
+    @media (max-width: 480px) {
+        max-width: none;
+        width: 100%;
+    }
 }
 
 .input {
     width: 100%;
     height: 44px;
-
-    padding: 11px 42px;
+    padding: 11px 16px 11px 42px;
+    /* Паддинг справа уменьшен до 16px, чтобы текст не обрезался рано */
 
     border: none;
     border-radius: 49px;
-
     background: #f4f7fe;
 
     font-family: var(--font-family);
@@ -43,6 +63,18 @@
     &::placeholder {
         color: #8f9bba;
     }
+
+    @media (max-width: 1000px) {
+        height: 38px;
+        font-size: 13px;
+        padding-left: 36px;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 12px;
+        height: 36px;
+        padding: 8px 12px 8px 32px;
+    }
 }
 
 .icon {
@@ -50,9 +82,46 @@
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
+    pointer-events: none;
+
+    @media (max-width: 1000px) {
+        left: 14px;
+        width: 16px;
+        height: 16px;
+    }
+
+    @media (max-width: 480px) {
+        left: 10px;
+        width: 14px;
+        height: 14px;
+    }
 }
 
-.icons{
+.icons {
     color: #a3aed0;
-   fill: currentColor;
+    fill: currentColor;
+    flex-shrink: 0;
+
+    @media (max-width: 780px) {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.avatar {
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+
+    @media (max-width: 1000px) {
+        width: 36px;
+        height: 36px;
+    }
+
+    @media (max-width: 785px) {
+        width: 30px;
+        height: 30px;
+    }
 }

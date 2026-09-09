@@ -1,21 +1,22 @@
 .sidebar {
-    width: 310px;
-    height: 1152px;
+    width: rem(310);
+    min-height: 100dvh;
 
-    background: #fff;
-    border-radius: 0 0 20px 0;
     display: flex;
     flex-direction: column;
 
+    background: #fff;
+    border-radius: 0 0 rem(20) 0;
 }
 
 .title {
-    margin: 55px;
-    font-family: "Poppins", sans-serif;
+    margin: rem(55) 0;
+
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 26px;
-    line-height: 100%;
-    color: #2b3674;
+    font-size: rem(26);
+    line-height: 1;
+    color: var(--color-dark-blue);
     text-align: center;
 
     span {
@@ -24,24 +25,25 @@
 }
 
 .separator {
-    content: '';
-    height: 1px;
     width: 100%;
-    background-color: #f4f7fe;
+    height: 1px;
+
+    background-color: var(--color-background);
 }
 
 .list {
     display: flex;
-    padding-top: 38px;
-    padding-left: 31px;
     flex-direction: column;
-    gap: 20px;
+    gap: rem(20);
+
+    padding-top: rem(38);
+    padding-left: rem(31);
 }
 
 .link {
     display: flex;
-    gap: 12px;
     align-items: center;
+    gap: rem(12);
 
     transition: all 0.3s ease;
 }
@@ -56,8 +58,8 @@
 .subtitle {
     font-family: var(--font-family);
     font-weight: 500;
-    font-size: 16px;
-    line-height: 188%;
+    font-size: rem(16);
+    line-height: 1.88;
     letter-spacing: -0.02em;
     color: #a3aed0;
 
@@ -66,7 +68,7 @@
 
 .linkActive {
     font-weight: 700;
-    color: #2b3674;
+    color: var(--color-dark-blue);
 }
 
 .linkActiveIcon {
@@ -75,12 +77,14 @@
 }
 
 .pro {
-    margin-top: auto;
-    padding: 25px 31px;
+    position: relative;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
+
+    margin-top: auto;
+    padding: rem(25) rem(31);
 }
 
 .proIcon {
@@ -89,8 +93,9 @@
 
 .getProIcon {
     position: absolute;
-    top: 75px;
-    left: 125px;
+    top: rem(75);
+    left: rem(125);
+
     display: block;
     pointer-events: none;
 }

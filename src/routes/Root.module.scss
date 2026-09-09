@@ -1,7 +1,9 @@
 .root {
     display: flex;
-} 
-.container{
-    width: 100%;
+}
+
+.container {
+    flex: 1;
+    min-width: 0;
     margin: 49px 20px 29px 20px;
 }

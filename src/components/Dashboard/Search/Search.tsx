@@ -1,9 +1,11 @@
 import s from './Search.module.scss'
+
 import SearchIcon from '../../../assets/dashboard/searchIcons/searchIcon.svg?react'
 import NotificationsIcon from '../../../assets/dashboard/searchIcons/notifications_none.svg?react'
 import MoonThemeIcon from '../../../assets/dashboard/searchIcons/moon-solid.svg?react'
 import InfoIcon from '../../../assets/dashboard/searchIcons/info_outline.svg?react'
 import avatar from '../../../assets/dashboard/searchIcons/avatar.png';
+
 import { useState } from 'react'
 
 export default function Search() {

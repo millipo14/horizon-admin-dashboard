@@ -1,9 +1,5 @@
-@use './styles/fonts';
-
-:root {
-  --font-family: "DM Sans", sans-serif;
-  --second-family: "Plus Jakarta Sans", sans-serif;
-}
+@use './helpers' as *;
+@use './variables';
 
 *,
 *::before,
@@ -24,6 +20,6 @@ body,
 
 body {
   margin: 0;
-  background: #f4f7fe;
+  background: var(--color-background);
   font-family: var(--font-family);
 }
