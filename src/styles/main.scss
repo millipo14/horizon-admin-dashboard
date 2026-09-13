@@ -27,3 +27,13 @@ body {
   background: var(--color-background);
   font-family: var(--font-family);
 }
+
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
