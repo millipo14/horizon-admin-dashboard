@@ -53,7 +53,7 @@
 .icon {
     flex-shrink: 0;
 
-    color: #a3aed0;
+    color: var(--color-light-grey);
     fill: currentColor;
 
     transition: all 0.3s ease;
@@ -65,7 +65,7 @@
     font-size: fluid(13, 16);
     line-height: 1.88;
     letter-spacing: -0.02em;
-    color: #a3aed0;
+    color: var(--color-light-grey);
 
     transition: all 0.3s ease;
 }

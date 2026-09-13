@@ -1,8 +1,9 @@
 import s from './DashboardPage.module.scss'
 
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs'
+import Breadcrumbs from '../../components/UI/Breadcrumbs/Breadcrumbs'
 import DashboardCards from '../../components/Dashboard/DashboardCards/DashboardCards'
 import Search from '../../components/Dashboard/Search/Search'
+import SpentChart from '../../components/Dashboard/SpentChart/SpentChart'
 
 export default function DashboardPage() {
   return (
@@ -21,7 +22,7 @@ export default function DashboardPage() {
       </section>
 
       <section className={s.widgetsGrid} aria-label="Dashboard analytics">
-
+        <SpentChart />
       </section>
 
     </main>

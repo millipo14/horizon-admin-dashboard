@@ -1,10 +1,52 @@
-import { spentChartMock } from "../../../mocks/spentChartData"
-import s from './SpentChart.module.scss'
+import s from './SpentChart.module.scss';
+import cn from 'classnames';
+
+import ArrowIcon from '../../../assets/dashboard/spentChartIcons/arrow.svg?react'
+import CheckIcon from '../../../assets/dashboard/spentChartIcons/checkIcon.svg?react'
+
+import { useState } from 'react';
+import { spentChartMock } from "../../../mocks/spentChartData";
+
+import SpentChartGraph from './SpentChartGraph';
+import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout';
+import SelectMonth from '../../UI/SelectMonth/SelectMonth';
+
+import type { SpentPeriod } from '../../../types/mocksTypes';
+
 
 export default function SpentChart() {
+    const [period, setPeriod] = useState<SpentPeriod>('6-months')
+    const currentData = spentChartMock[period]
+
     return (
-        <div className={s.spentCard}>
-            сфквкв
-        </div>
-    )
+        <DashboardLayout className={s.spentCard}>
+            <div className="info">
+                <SelectMonth period={period} onChange={(e) => setPeriod(e.target.value as SpentPeriod)} />
+                <p className={s.amount}>{currentData.summary.totalSpentAmount}</p>
+                <p className={s.total_spent}>
+                    Total Spent
+                    <span className={cn(s.percent, !currentData.summary.onTrack && s.percent__false)}>
+                        <ArrowIcon className={cn(s.percent__icon, !currentData.summary.onTrack && s['percent__icon-false'])} /> {currentData.summary.spentPercent}
+                    </span>
+                </p>
+                <div className={s.check}>
+                    {
+                        currentData.summary.onTrack ?
+                            <div className={s.check__true}>
+                                <CheckIcon />
+                                On track
+                            </div>
+                            :
+                            <div className={s.check__false}>
+                                Not track!
+                            </div>
+                    }
+                </div>
+
+            </div>
+            <div className="graph">
+                <SpentChartGraph data={currentData.chartData} />
+            </div>
+        </DashboardLayout>
+    );
 }

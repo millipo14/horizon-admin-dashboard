@@ -1,7 +1,7 @@
 .headerDashboard {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
 }
 
 .title {
@@ -11,4 +11,10 @@
     line-height: 124%;
     letter-spacing: -0.02em;
     color: var(--color-dark-blue);
+}
+
+.widgetsGrid {
+    display: grid;
+    grid-template-columns: (1fr 1fr);
+    gap: rem(20);
 }

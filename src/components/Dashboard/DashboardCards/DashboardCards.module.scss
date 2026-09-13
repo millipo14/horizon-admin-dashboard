@@ -17,17 +17,14 @@
     }
 }
 
-.card {
+.card.card {
     display: flex;
     align-items: center;
-    padding-left: fluid(12, 20);
+    padding: fluid(12, 20);
     gap: fluid(12, 18);
     width: 100%;
     min-width: 0;
     min-height: fluid(75, 95);
-
-    border-radius: rem(20);
-    background: var(--color-light);
 
     @media (max-width: 1700px) {
         padding: 0 fluid(10, 20);
@@ -69,7 +66,7 @@
     font-size: fluid(8, 14);
     line-height: 171%;
     letter-spacing: -0.02em;
-    color: #a3aed0;
+    color: var(--color-light-grey);
     white-space: nowrap;
     margin: 0;
 }
@@ -105,7 +102,7 @@
     font-size: fluid(10, 12);
     line-height: 167%;
     letter-spacing: -0.02em;
-    color: #a3aed0;
+    color: var(--color-light-grey);
 }
 
 .selectWrapper {

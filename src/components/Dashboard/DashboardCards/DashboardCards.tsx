@@ -1,7 +1,10 @@
 import s from './DashboardCards.module.scss'
 
-import { dashboardCardsData } from '../../../mocks/dashboardData'
 import ArrowSelect from '../../../assets/dashboard/cardIcons/arrowSelect.svg?react'
+
+import { dashboardCardsData } from '../../../mocks/dashboardData'
+
+import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
 
 export default function DashboardCards() {
     return (
@@ -11,17 +14,17 @@ export default function DashboardCards() {
                     const isRightLayout = card.type === 'balance' || card.type === 'sales'
                     if (!isRightLayout) {
                         return (
-                            <article key={card.id} className={s.card}>
+                            <DashboardLayout key={card.id} className={s.card}>
                                 <img src={card?.icon} alt={card.title} className={s.cardImg} />
                                 <dl className={s["cardDetails"]}>
                                     <dt className={s["cardTitle"]}>{card.title}</dt>
                                     <dd className={s["cardValue"]}>{card.value}</dd>
                                 </dl>
-                            </article>
+                            </DashboardLayout>
                         )
                     } else {
                         return (
-                            <article key={card.id} className={s.card}>
+                            <DashboardLayout key={card.id} className={s.card}>
                                 <dl className={s["cardDetails"]}>
                                     <dt className={s["cardTitle"]}>{card.title}</dt>
                                     <dd className={s["cardValue"]}>{card.value}
@@ -45,7 +48,7 @@ export default function DashboardCards() {
                                         </div>
                                     }
                                 </div>
-                            </article>)
+                            </DashboardLayout>)
                     }
                 })
             }

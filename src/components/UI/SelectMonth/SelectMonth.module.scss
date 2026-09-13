@@ -1,0 +1,41 @@
+.select {
+    display: flex;
+    align-items: center;
+    border-radius: rem(7);
+    background: var(--color-background);
+    font-size: rem(14);
+    line-height: 171%;
+    color: var(--color-light-grey);
+    padding: rem(12);
+
+    :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+    &:hover :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+    &:global(.Mui-focused) :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+    :global(.MuiSelect-icon) {
+        display: none;
+    }
+
+    :global(.MuiSelect-select) {
+        padding: 0;
+        overflow: visible;
+        white-space: nowrap;
+        text-overflow: clip;
+        color: var(--color-light-grey);
+    }
+}
+
+.select_item {
+    border-radius: rem(7);
+    font-size: rem(14);
+    line-height: 171%;
+    color: var(--color-light-grey);
+}
