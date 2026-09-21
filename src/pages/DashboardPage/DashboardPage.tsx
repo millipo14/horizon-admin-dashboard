@@ -5,6 +5,7 @@ import DashboardCards from '../../components/Dashboard/DashboardCards/DashboardC
 import Search from '../../components/Dashboard/Search/Search'
 import SpentChart from '../../components/Dashboard/SpentChart/SpentChart'
 import WeeklyRevenue from '../../components/Dashboard/WeeklyRevenue/WeeklyRevenue'
+import CheckTable from '../../components/Dashboard/CheckTable/CheckTable'
 
 export default function DashboardPage() {
   return (
@@ -25,6 +26,7 @@ export default function DashboardPage() {
       <section className={s.widgetsGrid} aria-label="Dashboard analytics">
         <SpentChart />
         <WeeklyRevenue />
+        <CheckTable />
       </section>
     </main>
   )

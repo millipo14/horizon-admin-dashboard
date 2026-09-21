@@ -1,0 +1,51 @@
+.table {}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: 700;
+    font-size: rem(24);
+    color: var(--color-dark-blue);
+}
+
+.icon {
+    color: var(--color-background);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        color: var(--color-light-grey);
+    }
+}
+
+.tableContainer {
+    &:global(.MuiPaper-root) {
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+}
+
+.headCell {
+    &:global(.MuiTableCell-root) {
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: 171%;
+        color: #a3aed0;
+        border-bottom: none;
+    }
+}
+
+.bodyCell {
+    &:global(.MuiTableCell-root) {
+        font-weight: 700;
+        font-size: rem(14);
+        line-height: 171%;
+        color: var(--color-dark-blue);
+        border-bottom: none;
+    }
+}

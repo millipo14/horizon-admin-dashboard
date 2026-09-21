@@ -41,3 +41,14 @@ export interface WeeklyDataType { //выручка/кол-во заказов е
     retail: number;
     partners: number;
 }
+
+//Check Tables Mocks
+
+export interface TableDataType {
+    id: number;
+    name: string;
+    progress: number;
+    quantity: number;
+    date: string;
+}
+
