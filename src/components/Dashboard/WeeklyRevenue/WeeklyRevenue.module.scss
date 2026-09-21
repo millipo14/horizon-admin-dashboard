@@ -1,0 +1,75 @@
+.headerCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: 700;
+    font-size: rem(24);
+    color: #1b2559;
+}
+
+.weekly_btn {
+    color: var(--color-background);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        color: var(--color-light-grey);
+    }
+}
+
+// tooltip
+.tooltip {
+    min-width: rem(180);
+    padding: rem(12) rem(14);
+    border-radius: rem(10);
+    background: var(--color-light);
+    box-shadow: 0 rem(8) rem(24) rgba(0, 0, 0, 0.12);
+
+    &__title {
+        margin: 0 0 rem(10);
+        font-size: rem(12);
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-light-grey);
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: rem(7);
+    }
+
+    &__item,
+    &__total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: rem(20);
+    }
+
+    &__item {
+        font-size: rem(12);
+    }
+
+    &__name {
+        color: #707eae;
+        text-transform: capitalize;
+    }
+
+    &__value {
+        font-weight: 600;
+        color: var(--color-dark-blue);
+    }
+
+    &__total {
+        margin-top: rem(10);
+        padding-top: rem(10);
+        border-top: rem(1) solid #e9edf7;
+        font-size: rem(13);
+        font-weight: 700;
+        color: var(--color-dark-blue);
+    }
+}

@@ -1,3 +1,4 @@
+//Spent Chart Mocks
 export type SpentPeriod = '3-months' | '6-months' | '9-months' | '12-months';
 
 export interface SpentSelectData { //информация о расходах за выбранный период
@@ -14,9 +15,10 @@ export interface SpentChartData { //точка на графике
 
 export interface SpentPeriodData {
     summary: SpentSelectData;
-    chartData: SpentChartData[]; 
+    chartData: SpentChartData[];
 }
 
+// Dashboard Cards Mocks
 export interface DashboardCards {
     id: number
     type: 'earnings' | 'spend' | 'sales' | 'balance' | 'tasks' | 'projects'
@@ -28,4 +30,14 @@ export interface DashboardCards {
         text: string
     }
     additionalElement?: 'dropdown' | null
+}
+
+//Weekly Mocks
+export type WeeklyPeriod = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri' | 'Sat' | 'Sun'
+
+export interface WeeklyDataType { //выручка/кол-во заказов ежедневно за неделю
+    day: WeeklyPeriod;
+    online: number;
+    retail: number;
+    partners: number;
 }

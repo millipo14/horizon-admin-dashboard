@@ -55,7 +55,7 @@ export default function SpentChart() {
                 </div>
 
             </div>
-            <div className="graph">
+            <div className={s.graph}>
                 <SpentChartGraph lineGraph={lineGraph} data={currentData.chartData} />
             </div>
         </DashboardLayout>

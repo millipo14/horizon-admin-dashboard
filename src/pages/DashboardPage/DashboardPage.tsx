@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/UI/Breadcrumbs/Breadcrumbs'
 import DashboardCards from '../../components/Dashboard/DashboardCards/DashboardCards'
 import Search from '../../components/Dashboard/Search/Search'
 import SpentChart from '../../components/Dashboard/SpentChart/SpentChart'
+import WeeklyRevenue from '../../components/Dashboard/WeeklyRevenue/WeeklyRevenue'
 
 export default function DashboardPage() {
   return (
@@ -23,8 +24,8 @@ export default function DashboardPage() {
 
       <section className={s.widgetsGrid} aria-label="Dashboard analytics">
         <SpentChart />
+        <WeeklyRevenue />
       </section>
-
     </main>
   )
 }
