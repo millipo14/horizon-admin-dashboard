@@ -6,6 +6,7 @@ import Search from '../../components/Dashboard/Search/Search'
 import SpentChart from '../../components/Dashboard/SpentChart/SpentChart'
 import WeeklyRevenue from '../../components/Dashboard/WeeklyRevenue/WeeklyRevenue'
 import CheckTable from '../../components/Dashboard/CheckTable/CheckTable'
+import DailyTraffic from '../../components/Dashboard/DailyTraffic/DailyTraffic'
 
 export default function DashboardPage() {
   return (
@@ -27,6 +28,10 @@ export default function DashboardPage() {
         <SpentChart />
         <WeeklyRevenue />
         <CheckTable />
+        <div className={s.graphs}>
+          <DailyTraffic />
+          <DailyTraffic />
+        </div>
       </section>
     </main>
   )

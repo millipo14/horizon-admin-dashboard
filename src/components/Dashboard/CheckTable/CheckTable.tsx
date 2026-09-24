@@ -7,6 +7,7 @@ import { checkTablesMock } from '../../../mocks/checkTable'
 import CustomCheckbox from '../../UI/Checkbox/Checkbox'
 import { useState } from 'react'
 import type { TableDataType } from '../../../types/mocksTypes'
+import { formatedDate } from '../../../utils/formatDate'
 
 
 export default function CheckTable() {
@@ -48,11 +49,6 @@ export default function CheckTable() {
                     </TableHead>
                     <TableBody>
                         {viewTable.slice(0, 5).map((row) => {
-                            const formattedDate = new Date(row.date).toLocaleDateString('en-US', {
-                                day: '2-digit',
-                                month: 'short',
-                                year: 'numeric',
-                            })
                             const checked = selectedId.includes(row.id)
                             return (
                                 <TableRow key={row.id}>
@@ -70,7 +66,7 @@ export default function CheckTable() {
                                     </TableCell>
 
                                     <TableCell className={s.bodyCell}>
-                                        {formattedDate}
+                                        {formatedDate(row.date)}
                                     </TableCell>
                                 </TableRow>
                             )

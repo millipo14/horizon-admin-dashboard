@@ -26,7 +26,7 @@ export default function WeeklyRevenue() {
                 </button>
             </div>
 
-            <div className='graph'>
+            <div className={s.graph}>
                 <ResponsiveContainer width="100%" height={260}>
                     <BarChart data={currentData} barSize={20}>
                         <XAxis dataKey='day'

@@ -37,7 +37,8 @@ export default function SpentChart() {
                 <p className={s.total_spent}>
                     Total Spent
                     <span className={cn(s.percent, !currentData.summary.onTrack && s.percent__false)}>
-                        <ArrowIcon className={cn(s.percent__icon, !currentData.summary.onTrack && s['percent__icon-false'])} /> {currentData.summary.spentPercent}
+                        <ArrowIcon className={cn(s.percent__icon, !currentData.summary.onTrack && s['percent__icon-false'])} />
+                        {currentData.summary.spentPercent}
                     </span>
                 </p>
                 <div className={s.check}>

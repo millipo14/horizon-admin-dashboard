@@ -52,3 +52,16 @@ export interface TableDataType {
     date: string;
 }
 
+// Daily Traffic Mocks
+
+export interface DailyTrafficType {
+    id: number;
+    percentageChange: number;
+    onChange: boolean;
+    visitors: number;
+    chartData: {
+        time: string;
+        value: number;
+    }[];
+}
+
