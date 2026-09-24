@@ -13,12 +13,40 @@
 }
 
 .icon {
+    position: relative;
     color: var(--color-background);
     cursor: pointer;
     transition: background-color 0.2s ease;
 
     &:hover {
         color: var(--color-light-grey);
+    }
+}
+
+
+.actions {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+}
+
+.btnDelet {
+    position: absolute;
+    z-index: 5;
+
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: 171%;
+    color: var(--color-dark-blue);
+    border: 1px solid var(--color-light-grey);
+    border-radius: rem(30);
+    padding: rem(5);
+
+    &:hover {
+        background-color: var(--color-light-grey);
     }
 }
 

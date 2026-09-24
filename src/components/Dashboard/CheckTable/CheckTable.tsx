@@ -5,18 +5,36 @@ import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import { checkTablesMock } from '../../../mocks/checkTable'
 import CustomCheckbox from '../../UI/Checkbox/Checkbox'
+import { useState } from 'react'
+import type { TableDataType } from '../../../types/mocksTypes'
 
 
 export default function CheckTable() {
+    const [isOpen, setIsOpen] = useState(false)
+    const [selectedId, setSelectedId] = useState<number[]>([])
+    const [viewTable, setViewTable] = useState<TableDataType[]>(checkTablesMock)
+
     return (
         <DashboardLayout className={s.table}>
             <div className={s.header}>
                 <h2 className={s.title}>
                     Check Table
                 </h2>
-                <button className={s.icon}>
-                    <MoreIcon />
-                </button>
+                <div className={s.actions}>
+                    <button className={s.icon}
+                        onClick={() => setIsOpen(!isOpen)}>
+                        <MoreIcon />
+                    </button>
+
+                    {isOpen && (
+                        <div className={s.dropdown}>
+                            <button className={s.btnDelet}
+                                onClick={() => setViewTable(viewTable.filter((item) => !selectedId.includes(item.id)))}>
+                                Delete selected
+                            </button>
+                        </div>
+                    )}
+                </div>
             </div>
             <TableContainer component={Paper} className={s.tableContainer}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -29,16 +47,17 @@ export default function CheckTable() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {checkTablesMock.map((row) => {
+                        {viewTable.slice(0, 5).map((row) => {
                             const formattedDate = new Date(row.date).toLocaleDateString('en-US', {
                                 day: '2-digit',
                                 month: 'short',
                                 year: 'numeric',
                             })
+                            const checked = selectedId.includes(row.id)
                             return (
                                 <TableRow key={row.id}>
                                     <TableCell className={s.bodyCell}>
-                                        <CustomCheckbox />
+                                        <CustomCheckbox checked={checked} onChange={(check) => check ? setSelectedId([...selectedId, row.id]) : setSelectedId(selectedId.filter(id => id !== row.id))} />
                                         {row.name}
                                     </TableCell>
 
