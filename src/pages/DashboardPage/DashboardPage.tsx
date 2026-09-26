@@ -7,6 +7,7 @@ import SpentChart from '../../components/Dashboard/SpentChart/SpentChart'
 import WeeklyRevenue from '../../components/Dashboard/WeeklyRevenue/WeeklyRevenue'
 import CheckTable from '../../components/Dashboard/CheckTable/CheckTable'
 import DailyTraffic from '../../components/Dashboard/DailyTraffic/DailyTraffic'
+import StorageChart from '../../components/Dashboard/StorageChart/StorageChart'
 
 export default function DashboardPage() {
   return (
@@ -30,7 +31,7 @@ export default function DashboardPage() {
         <CheckTable />
         <div className={s.graphs}>
           <DailyTraffic />
-          <DailyTraffic />
+          <StorageChart />
         </div>
       </section>
     </main>

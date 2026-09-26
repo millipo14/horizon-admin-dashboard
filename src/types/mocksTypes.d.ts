@@ -65,3 +65,15 @@ export interface DailyTrafficType {
     }[];
 }
 
+
+// Pie Chart
+
+export type StoragePeriod = 'weekly' | 'monthly' | 'yearly';
+
+export interface StorageDataType {
+    id: number;
+    name: string;
+    value: number;
+}
+
+

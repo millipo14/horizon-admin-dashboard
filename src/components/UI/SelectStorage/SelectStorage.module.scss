@@ -1,0 +1,39 @@
+.select {
+    display: flex;
+    align-items: center;
+    font-size: rem(12);
+    line-height: 167%;
+    font-weight: 700;
+    color: var(--color-light-grey);
+
+    :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+    &:hover :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+    &:global(.Mui-focused) :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+    :global(.MuiSelect-icon) {
+        color: var(--color-light-grey);
+    }
+
+    :global(.MuiSelect-select) {
+        padding: 0;
+        overflow: visible;
+        white-space: nowrap;
+        text-overflow: clip;
+        color: var(--color-light-grey);
+    }
+}
+
+.select_item {
+    border-radius: rem(7);
+    font-size: rem(12);
+    line-height: 171%;
+    color: var(--color-light-grey);
+}
