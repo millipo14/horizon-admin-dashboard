@@ -3,10 +3,10 @@ import s from './CheckTable.module.scss'
 
 import { TableCell, TableRow } from '@mui/material'
 import { checkTablesMock } from '../../../mocks/checkTable'
-import CustomCheckbox from '../../UI/Checkbox/Checkbox'
+import CustomCheckbox from '../../UI/CustomCheckbox/CustomCheckbox'
 import { useState } from 'react'
 import type { TableDataType } from '../../../types/mocksTypes'
-import { formatedDate } from '../../../utils/formatDate'
+import { formatDateUS } from '../../../utils/formatDate'
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
 
 
@@ -41,7 +41,7 @@ export default function CheckTable() {
                         </TableCell>
 
                         <TableCell className={s.bodyCell}>
-                            {formatedDate(row.date)}
+                            {formatDateUS(row.date)}
                         </TableCell>
                     </TableRow>
                 )

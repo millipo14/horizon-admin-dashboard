@@ -1,0 +1,29 @@
+.bodyCell {
+    &:global(.MuiTableCell-root) {
+        font-weight: 700;
+        font-size: rem(14);
+        line-height: 171%;
+        color: var(--color-dark-blue);
+        border-bottom: none;
+    }
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: rem(5);
+
+    text-transform: capitalize;
+}
+
+.progress {
+    border-radius: rem(21);
+    height: rem(8);
+
+    background-color: #eff4fb;
+
+    :global(.MuiLinearProgress-bar) {
+        background-color: var(--color-blue);
+        border-radius: rem(21);
+    }
+}

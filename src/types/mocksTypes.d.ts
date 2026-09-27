@@ -77,3 +77,23 @@ export interface StorageDataType {
 }
 
 
+//Complex Tables Mocks
+
+export type StatusComplexTable = 'approved' | 'disable' | 'error'
+
+export interface ComplexTableDataType {
+    id: number;
+    name: string;
+    status: StatusComplexTable;
+    date: string;
+    progress: number;
+}
+
+
+// Tasks 
+
+export interface TasksType {
+    id: number;
+    name: string;
+    done: boolean;
+}

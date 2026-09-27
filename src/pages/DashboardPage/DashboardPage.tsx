@@ -8,6 +8,8 @@ import WeeklyRevenue from '../../components/Dashboard/WeeklyRevenue/WeeklyRevenu
 import CheckTable from '../../components/Dashboard/CheckTable/CheckTable'
 import DailyTraffic from '../../components/Dashboard/DailyTraffic/DailyTraffic'
 import StorageChart from '../../components/Dashboard/StorageChart/StorageChart'
+import ComlpexTable from '../../components/Dashboard/ComlpexTable/ComlpexTable'
+import Tasks from '../../components/Dashboard/Tasks/Tasks'
 
 export default function DashboardPage() {
   return (
@@ -31,6 +33,11 @@ export default function DashboardPage() {
         <CheckTable />
         <div className={s.graphs}>
           <DailyTraffic />
+          <StorageChart />
+        </div>
+        <ComlpexTable />
+        <div className={s.graphs}>
+          <Tasks />
           <StorageChart />
         </div>
       </section>

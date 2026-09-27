@@ -9,8 +9,8 @@ import { useState, type ReactNode } from 'react';
 
 interface LayoutTableProps {
     title: string;
-    onClickMore: () => void;
-    buttonMoreText: string;
+    onClickMore?: () => void;
+    buttonMoreText?: string;
     tableCellNames: string[];
     children: ReactNode;
 }
