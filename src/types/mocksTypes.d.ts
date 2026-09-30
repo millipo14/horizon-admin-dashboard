@@ -97,3 +97,11 @@ export interface TasksType {
     name: string;
     done: boolean;
 }
+
+
+// Lesson card аватарки участников
+
+export interface LessonAvatars {
+    id: number;
+    avatar: string;
+}

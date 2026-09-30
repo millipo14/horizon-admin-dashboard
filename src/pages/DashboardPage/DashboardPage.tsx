@@ -10,6 +10,8 @@ import DailyTraffic from '../../components/Dashboard/DailyTraffic/DailyTraffic'
 import StorageChart from '../../components/Dashboard/StorageChart/StorageChart'
 import ComlpexTable from '../../components/Dashboard/ComlpexTable/ComlpexTable'
 import Tasks from '../../components/Dashboard/Tasks/Tasks'
+import Calendar from '../../components/Dashboard/Calendar/Calendar'
+import LessonCard from '../../components/Dashboard/LessonCard/LessonCard'
 
 export default function DashboardPage() {
   return (
@@ -38,7 +40,11 @@ export default function DashboardPage() {
         <ComlpexTable />
         <div className={s.graphs}>
           <Tasks />
-          <StorageChart />
+          <Calendar />
+        </div>
+        <div className={s.graphs}>
+          <LessonCard />
+          <Calendar />
         </div>
       </section>
     </main>

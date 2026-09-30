@@ -1,0 +1,75 @@
+.select {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    padding: 8px 8px 8px 16px;
+
+    &:hover {
+        background: var(--color-background);
+        border-radius: rem(40);
+
+        :global(.MuiSelect-icon) {
+            color: var(--color-blue);
+        }
+
+        :global(.MuiSelect-select) {
+            color: var(--color-blue);
+        }
+    }
+
+    :global(.MuiSelect-icon) {
+        color: var(--color-light-grey);
+
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        transform: translateY(-50%);
+        pointer-events: none;
+    }
+
+    :global(.MuiSelect-select) {
+        padding: 0;
+        overflow: visible;
+        white-space: nowrap;
+        text-overflow: clip;
+
+        font-weight: 700;
+        color: var(--color-dark-blue);
+    }
+
+    &:global(.Mui-focused) :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+    :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+    &:hover :global(.MuiOutlinedInput-notchedOutline) {
+        border: none;
+    }
+
+}
+
+.select_item {
+    border-radius: rem(7);
+    font-size: rem(14);
+    line-height: 171%;
+    color: var(--color-dark-blue);
+
+    &:hover {
+        color: var(--color-blue);
+        background: var(--color-background);
+    }
+
+    &:global(.Mui-selected) {
+        color: var(--color-blue);
+        background: var(--color-background);
+    }
+
+    &:global(.Mui-selected:hover) {
+        color: var(--color-blue);
+        background: var(--color-background);
+    }
+}

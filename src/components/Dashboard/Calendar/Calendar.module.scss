@@ -1,0 +1,78 @@
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    :global(.rdp-month_caption) {
+        display: none;
+    }
+
+    :global(.rdp-weekday) {
+        font-weight: 700;
+        font-size: rem(14);
+        line-height: 171%;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: var(--color-dark-blue);
+    }
+
+    :global(.rdp-month_grid) {
+        border-spacing: rem(16) rem(8);
+    }
+
+    :global(.rdp-day) {
+        width: rem(47);
+        height: rem(40);
+    }
+
+    :global(.rdp-day_button) {
+        color: var(--color-dark-blue);
+        font-weight: 500;
+        font-size: rem(12);
+        line-height: 167%;
+        letter-spacing: -0.02em;
+    }
+
+    :global(.rdp-today) {
+        border-radius: 100%;
+        background-color: var(--color-background);
+    }
+
+    :global(.rdp-range_middle) {
+        background: var(--color-background);
+
+        :global(.rdp-day_button) {
+            color: var(--color-blue);
+        }
+    }
+
+    :global(.rdp-range_start) {
+        background-color: var(--color-background);
+        border-radius: 40px 0 0 40px;
+
+        :global(.rdp-day_button) {
+            color: var(--color-light);
+        }
+    }
+
+    :global(.rdp-range_end) {
+        background-color: var(--color-background);
+        border-radius: 0 40px 40px 0;
+
+        :global(.rdp-day_button) {
+            color: var(--color-light);
+        }
+    }
+
+    :global(.rdp-outside) {
+        :global(.rdp-day_button) {
+            color: var(--color-light-grey);
+        }
+    }
+}
+
+.header {
+    display: flex;
+    gap: rem(38);
+    margin-bottom: rem(5);
+}
