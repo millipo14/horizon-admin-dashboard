@@ -3,15 +3,16 @@ import s from './Tasks.module.scss'
 import MoreIcon from '../../../assets/dashboard/icons/more.svg?react'
 
 import { useState } from 'react';
+import { DragDropProvider, type DragEndEvent } from '@dnd-kit/react';
+import { tasksMock } from '../../../mocks/tasksMock';
+import { move } from '@dnd-kit/helpers';
 
 import DashboardLayout from "../../UI/DashboardLayout/DashboardLayout";
 import CustomCheckbox from '../../UI/CustomCheckbox/CustomCheckbox';
-import { tasksMock } from '../../../mocks/tasksMock';
+import TaskItem from './TaskItem';
 
 import type { TasksType } from '../../../types/mocksTypes';
-import { DragDropProvider, type DragEndEvent } from '@dnd-kit/react';
-import TaskItem from './TaskItem';
-import { move } from '@dnd-kit/helpers';
+import ActionButton from '../../UI/BtnDelete/ActionButton';
 
 export default function Tasks() {
     const [isOpen, setIsOpen] = useState(false)
@@ -53,12 +54,10 @@ export default function Tasks() {
                     </button>
 
                     {isOpen && (
-                        <div className={s.dropdown}>
-                            <button className={s.btnDelet}
-                                onClick={deleteCheck}>
-                                Delete selected
-                            </button>
-                        </div>
+                        <ActionButton
+                            onClick={deleteCheck}
+                            textBtn='Delete selected'
+                        />
                     )}
                 </div>
             </div>

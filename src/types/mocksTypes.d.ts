@@ -105,3 +105,13 @@ export interface LessonAvatars {
     id: number;
     avatar: string;
 }
+
+
+// team
+
+export interface TeamMembersType{
+    id: number;
+    name: string;
+    position: string;
+    avatar: string;
+}

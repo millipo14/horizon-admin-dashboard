@@ -12,6 +12,9 @@ import ComlpexTable from '../../components/Dashboard/ComlpexTable/ComlpexTable'
 import Tasks from '../../components/Dashboard/Tasks/Tasks'
 import Calendar from '../../components/Dashboard/Calendar/Calendar'
 import LessonCard from '../../components/Dashboard/LessonCard/LessonCard'
+import TeamMembersCard from '../../components/Dashboard/TeamMembersCard/TeamMembersCard'
+import PromoCard from '../../components/Dashboard/PromoCard/PromoCard'
+import OfferCard from '../../components/Dashboard/OfferCard/OfferCard'
 
 export default function DashboardPage() {
   return (
@@ -44,7 +47,11 @@ export default function DashboardPage() {
         </div>
         <div className={s.graphs}>
           <LessonCard />
-          <Calendar />
+          <TeamMembersCard />
+        </div>
+        <div className={s.graphs}>
+          <PromoCard />
+          <OfferCard />
         </div>
       </section>
     </main>

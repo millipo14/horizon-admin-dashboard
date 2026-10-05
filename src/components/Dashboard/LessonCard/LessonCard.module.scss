@@ -5,22 +5,18 @@
     gap: rem(12);
 }
 
-.lesson_icon {}
-
 .titles {
     font-weight: 700;
 }
 
 .subtitle {
     font-size: rem(12);
-    line-height: 167%;
     letter-spacing: -0.02em;
     color: var(--color-light-grey);
 }
 
 .title {
     font-size: rem(16);
-    line-height: 175%;
     letter-spacing: -0.02em;
     color: var(--color-dark-blue);
 }
@@ -29,7 +25,6 @@
     margin: rem(46) 0;
 
     font-size: rem(20);
-    line-height: 175%;
     letter-spacing: -0.02em;
     color: var(--color-dark-blue);
 }
@@ -110,6 +105,28 @@
 
 }
 
+.remaining {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -11px;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 100%;
+    background-color: #e0e5f2;
+    border: 2px solid var(--color-light);
+
+    font-weight: 700;
+    font-size: rem(8);
+    line-height: 171%;
+    letter-spacing: -0.02em;
+    color: var(--color-blue);
+
+    z-index: 6;
+}
+
 .button {
     white-space: nowrap;
 
@@ -122,4 +139,10 @@
     background-color: var(--color-blue);
     border-radius: rem(18);
     padding: rem(8) rem(25);
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        background-color: var(--color-dark-blue);
+    }
 }

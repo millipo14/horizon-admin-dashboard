@@ -9,6 +9,7 @@ import { lessonAvatarsMock } from '../../../mocks/lessonAvatars'
 
 export default function LessonCard() {
     const viewAvatar = lessonAvatarsMock.slice(0, 4)
+    const countRemaining = lessonAvatarsMock.length - viewAvatar.length
 
     return (
         <DashboardLayout>
@@ -43,7 +44,7 @@ export default function LessonCard() {
                 <div className={s.footer}>
                     <div className={s.participants}>
                         {
-                            lessonAvatarsMock.slice(0, 4).map(avatar =>
+                            viewAvatar.map(avatar =>
                                 <img
                                     key={avatar.id}
                                     src={avatar.avatar}
@@ -52,6 +53,9 @@ export default function LessonCard() {
                                 />
                             )
                         }
+                        <div className={s.remaining}>
+                            {countRemaining}+
+                        </div>
                     </div>
                     <button className={s.button}>
                         Get Started

@@ -6,6 +6,8 @@ import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow
 
 import DashboardLayout from '../DashboardLayout/DashboardLayout'
 import { useState, type ReactNode } from 'react';
+import ActionButton from '../BtnDelete/ActionButton';
+
 
 interface LayoutTableProps {
     title: string;
@@ -32,14 +34,12 @@ export default function LayoutTable({ title, onClickMore, buttonMoreText, tableC
                         <MoreIcon />
                     </button>
 
-                    {isOpen && (
-                        <div className={s.dropdown}>
-                            <button className={s.btnDelet}
-                                onClick={onClickMore}>
-                                {buttonMoreText}
-                            </button>
-                        </div>
-                    )}
+                    {isOpen && onClickMore && buttonMoreText &&
+                        <ActionButton
+                            onClick={onClickMore}
+                            textBtn={buttonMoreText}
+                        />
+                    }
                 </div>
             </div>
             <TableContainer component={Paper} className={s.tableContainer}>

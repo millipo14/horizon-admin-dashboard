@@ -1,0 +1,39 @@
+.promoCard {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-top: rem(17);
+    margin-bottom: rem(31);
+
+    font-size: rem(24);
+    line-height: 133%;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    margin-bottom: rem(35);
+
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: 171%;
+    letter-spacing: -0.02em;
+    color: var(--color-light-grey);
+}
+
+.btn {
+    align-self: center;
+    margin-top: auto;
+
+    border-radius: rem(16);
+    background-color: var(--color-blue);
+
+    padding: rem(11) rem(142);
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 171%;
+    letter-spacing: -0.02em;
+    color: var(--color-light);
+}
