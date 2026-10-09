@@ -4,7 +4,12 @@ import balanceIcon from '../assets/dashboard/cardIcons/balance.png'
 import tasksIcon from '../assets/dashboard/cardIcons/tasks.svg'
 import projectsIcon from '../assets/dashboard/cardIcons/projects.svg'
 
-import type { DashboardCards } from '../types/mocksTypes'
+import type { AdditionalElement, DashboardCards } from '../types/mocksTypes'
+
+const additionalElement: AdditionalElement = {
+    type: 'currency',
+    currencies: ['USD', 'EUR', 'RUB']
+}
 
 export const dashboardCardsData: DashboardCards[] = [
     {
@@ -36,9 +41,9 @@ export const dashboardCardsData: DashboardCards[] = [
         id: 4,
         type: 'balance',
         title: 'Your balance',
-        value: '$1,000',
+        value: 1000,
         icon: balanceIcon,
-        additionalElement: 'dropdown'
+        additionalElement,
     },
     {
         id: 5,

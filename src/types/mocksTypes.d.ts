@@ -19,6 +19,14 @@ export interface SpentPeriodData {
 }
 
 // Dashboard Cards Mocks
+
+type Currencies = 'USD' | 'EUR' | 'RUB'
+
+type AdditionalElement = {
+    type: string;
+    currencies: Currencies[];
+}
+
 export interface DashboardCards {
     id: number
     type: 'earnings' | 'spend' | 'sales' | 'balance' | 'tasks' | 'projects'
@@ -29,7 +37,7 @@ export interface DashboardCards {
         percent: string
         text: string
     }
-    additionalElement?: 'dropdown' | null
+    additionalElement?: AdditionalElement
 }
 
 //Weekly Mocks
@@ -109,7 +117,7 @@ export interface LessonAvatars {
 
 // team
 
-export interface TeamMembersType{
+export interface TeamMembersType {
     id: number;
     name: string;
     position: string;

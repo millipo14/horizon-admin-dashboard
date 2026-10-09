@@ -4,10 +4,18 @@ import LessonIcon from '../../../assets/dashboard/lessonCardIcons/lesson_icon.sv
 import TimeIcon from '../../../assets/dashboard/lessonCardIcons/time_lesson.svg?react'
 import VideoIcon from '../../../assets/dashboard/lessonCardIcons/video.svg?react'
 
-import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
+import { useState } from 'react'
 import { lessonAvatarsMock } from '../../../mocks/lessonAvatars'
 
+import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
+import LessonModal from './LessonModal/LessonModal'
+
+
+const lessonName = 'What do you need to know to create better products ? '
+
 export default function LessonCard() {
+    const [isOpen, setIsOpen] = useState(false)
+
     const viewAvatar = lessonAvatarsMock.slice(0, 4)
     const countRemaining = lessonAvatarsMock.length - viewAvatar.length
 
@@ -27,8 +35,7 @@ export default function LessonCard() {
                 </div>
             </header>
             <h2 className={s.lesson_name}>
-                What do you need to know to <br />
-                create better products?
+                {lessonName}
             </h2>
             <div className={s.background}>
                 <div className={s.actions}>
@@ -57,12 +64,20 @@ export default function LessonCard() {
                             {countRemaining}+
                         </div>
                     </div>
-                    <button className={s.button}>
+                    <button
+                        type="button"
+                        onClick={() => setIsOpen(true)}
+                        className={s.button}>
                         Get Started
                     </button>
                 </div>
             </div>
-
+            {
+                isOpen && <LessonModal
+                    onClose={() => setIsOpen(false)}
+                    lessonName={lessonName}
+                />
+            }
         </DashboardLayout>
     )
 }
