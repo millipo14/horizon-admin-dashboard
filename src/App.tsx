@@ -5,6 +5,7 @@ import DashboardPage from "./pages/DashboardPage/DashboardPage"
 import Tables from "./components/Tables/Tables"
 
 import { ROUTES } from "./routes/routes"
+import NftPage from "./pages/NftPage/NftPage"
 
 
 const router = createBrowserRouter(
@@ -13,6 +14,7 @@ const router = createBrowserRouter(
       <Route path={ROUTES.DASHBOARD} element={<Root />}>
         <Route index element={<DashboardPage />} />
         <Route path={ROUTES.TABLES} element={<Tables />} />
+        <Route path={ROUTES.NFT} element={<NftPage />} />
       </Route>
     </>
   )

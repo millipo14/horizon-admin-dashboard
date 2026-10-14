@@ -1,10 +1,10 @@
-import earningsIcon from '../assets/dashboard/cardIcons/earnings.svg'
-import spendIcon from '../assets/dashboard/cardIcons/spend.svg'
-import balanceIcon from '../assets/dashboard/cardIcons/balance.png'
-import tasksIcon from '../assets/dashboard/cardIcons/tasks.svg'
-import projectsIcon from '../assets/dashboard/cardIcons/projects.svg'
+import earningsIcon from '../../assets/dashboard/cardIcons/earnings.svg'
+import spendIcon from '../../assets/dashboard/cardIcons/spend.svg'
+import balanceIcon from '../../assets/dashboard/cardIcons/balance.png'
+import tasksIcon from '../../assets/dashboard/cardIcons/tasks.svg'
+import projectsIcon from '../../assets/dashboard/cardIcons/projects.svg'
 
-import type { AdditionalElement, DashboardCards } from '../types/mocksTypes'
+import type { AdditionalElement, DashboardCards } from '../../types/mocksDashboardPageTypes'
 
 const additionalElement: AdditionalElement = {
     type: 'currency',

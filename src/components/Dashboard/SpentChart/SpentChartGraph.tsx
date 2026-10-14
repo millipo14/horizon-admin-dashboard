@@ -2,7 +2,7 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, BarChart, YAxis, 
 
 import TooltipCustom from './TooltipCustom';
 
-import type { SpentChartData } from "../../../types/mocksTypes"
+import type { SpentChartData } from "../../../types/mocksDashboardPageTypes"
 
 interface SpentChartGraphProps {
     data: SpentChartData[];

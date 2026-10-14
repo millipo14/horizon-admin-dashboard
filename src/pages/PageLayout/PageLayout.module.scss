@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: rem(20);
+}
+
+.title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: fluid(20, 34);
+    line-height: 124%;
+    letter-spacing: -0.02em;
+}

@@ -1,4 +1,4 @@
-import type { TeamMembersType } from "../types/mocksTypes";
+import type { TeamMembersType } from "../../types/mocksDashboardPageTypes";
 
 
 export const teamMembersMock: TeamMembersType[] = [

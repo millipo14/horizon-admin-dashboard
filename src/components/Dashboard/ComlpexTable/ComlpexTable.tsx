@@ -5,12 +5,12 @@ import DisableIcon from '../../../assets/dashboard/complexTableIcons/disable.svg
 import ErrorIcon from '../../../assets/dashboard/complexTableIcons/error.svg?react'
 
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
-import { complexTableMock } from '../../../mocks/complexTable'
+import { complexTableMock } from '../../../mocks/dashboardPage/complexTable'
 import { Box, LinearProgress, TableCell, TableRow } from '@mui/material'
 import { formatDateEU } from '../../../utils/formatDate'
 import { useState } from 'react'
 
-import type { ComplexTableDataType } from '../../../types/mocksTypes'
+import type { ComplexTableDataType } from '../../../types/mocksDashboardPageTypes'
 
 export default function ComlpexTable() {
     const names = ['NAME', 'STATUS', 'DATE', 'PROGRESS']

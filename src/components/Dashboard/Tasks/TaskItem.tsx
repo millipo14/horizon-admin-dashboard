@@ -6,7 +6,7 @@ import cn from 'classnames'
 
 import CustomCheckbox from '../../UI/CustomCheckbox/CustomCheckbox'
 
-import type { TasksType } from '../../../types/mocksTypes'
+import type { TasksType } from '../../../types/mocksDashboardPageTypes'
 import { useSortable } from '@dnd-kit/react/sortable'
 
 type TaskItemProps = {

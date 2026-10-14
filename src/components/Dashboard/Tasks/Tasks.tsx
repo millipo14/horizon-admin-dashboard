@@ -4,14 +4,14 @@ import MoreIcon from '../../../assets/dashboard/icons/more.svg?react'
 
 import { useState } from 'react';
 import { DragDropProvider, type DragEndEvent } from '@dnd-kit/react';
-import { tasksMock } from '../../../mocks/tasksMock';
+import { tasksMock } from '../../../mocks/dashboardPage/tasksMock';
 import { move } from '@dnd-kit/helpers';
 
 import DashboardLayout from "../../UI/DashboardLayout/DashboardLayout";
 import CustomCheckbox from '../../UI/CustomCheckbox/CustomCheckbox';
 import TaskItem from './TaskItem';
 
-import type { TasksType } from '../../../types/mocksTypes';
+import type { TasksType } from '../../../types/mocksDashboardPageTypes';
 import ActionButton from '../../UI/BtnDelete/ActionButton';
 
 export default function Tasks() {

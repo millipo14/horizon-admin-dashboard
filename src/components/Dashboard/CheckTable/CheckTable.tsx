@@ -2,10 +2,10 @@ import s from './CheckTable.module.scss'
 
 
 import { TableCell, TableRow } from '@mui/material'
-import { checkTablesMock } from '../../../mocks/checkTable'
+import { checkTablesMock } from '../../../mocks/dashboardPage/checkTable'
 import CustomCheckbox from '../../UI/CustomCheckbox/CustomCheckbox'
 import { useState } from 'react'
-import type { TableDataType } from '../../../types/mocksTypes'
+import type { TableDataType } from '../../../types/mocksDashboardPageTypes'
 import { formatDateUS } from '../../../utils/formatDate'
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
 

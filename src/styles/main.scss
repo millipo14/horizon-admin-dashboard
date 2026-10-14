@@ -22,6 +22,12 @@ body,
   min-height: 100%;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 body {
   margin: 0;
   background: var(--color-background);
@@ -38,6 +44,7 @@ button {
   color: inherit;
   cursor: pointer;
 }
+
 ul,
 ol {
   margin: 0;

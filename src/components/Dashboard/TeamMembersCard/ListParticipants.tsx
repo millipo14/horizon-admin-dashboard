@@ -1,6 +1,6 @@
 import s from './TeamMembersCard.module.scss'
 
-import type { TeamMembersType } from '../../../types/mocksTypes'
+import type { TeamMembersType } from '../../../types/mocksDashboardPageTypes'
 
 interface ListParticipantsProps {
     under_added: TeamMembersType[];

@@ -1,0 +1,17 @@
+.catalog {
+    margin-top: rem(47);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 0 rem(20) rem(20);
+}
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: rem(47);
+}

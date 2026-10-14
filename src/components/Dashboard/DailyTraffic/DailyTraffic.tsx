@@ -5,7 +5,7 @@ import ArrowIcon from '../../../assets/dashboard/spentChartIcons/arrow.svg?react
 import cn from 'classnames';
 
 import DashboardLayout from "../../UI/DashboardLayout/DashboardLayout";
-import { dailyTrafficMock } from '../../../mocks/dailyTraffic';
+import { dailyTrafficMock } from '../../../mocks/dashboardPage/dailyTraffic';
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import DailyTrafficTooltip from './DailyTrafficTooltip';
 

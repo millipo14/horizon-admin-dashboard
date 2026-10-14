@@ -6,13 +6,13 @@ import CheckIcon from '../../../assets/dashboard/spentChartIcons/checkIcon.svg?r
 import ChartToggle from '../../../assets/dashboard/spentChartIcons/chartToggle.svg?react'
 
 import { useState } from 'react';
-import { spentChartMock } from "../../../mocks/spentChartData";
+import { spentChartMock } from "../../../mocks/dashboardPage/spentChartData";
 
 import SpentChartGraph from './SpentChartGraph';
 import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout';
 import SelectMonth from '../../UI/SelectMonth/SelectMonth';
 
-import type { SpentPeriod } from '../../../types/mocksTypes';
+import type { SpentPeriod } from '../../../types/mocksDashboardPageTypes';
 
 
 export default function SpentChart() {

@@ -4,7 +4,7 @@ import CalendarIcon from '../../../assets/dashboard/spentChartIcons/calendarIcon
 
 import { FormControl, InputAdornment, MenuItem, Select, type SelectChangeEvent } from '@mui/material'
 
-import type { SpentPeriod } from '../../../types/mocksTypes';
+import type { SpentPeriod } from '../../../types/mocksDashboardPageTypes';
 
 interface SelectMonthProps {
     period: SpentPeriod;

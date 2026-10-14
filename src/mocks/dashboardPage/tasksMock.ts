@@ -1,4 +1,4 @@
-import type { TasksType } from "../types/mocksTypes";
+import type { TasksType } from "../../types/mocksDashboardPageTypes";
 
 export const tasksMock: TasksType[] = [
     { id: 1, name: 'Landing Page Design', done: false },

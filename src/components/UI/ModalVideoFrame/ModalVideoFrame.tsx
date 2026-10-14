@@ -1,12 +1,17 @@
-import { useEffect } from 'react';
-import s from './LessonModal.module.scss'
+import s from './ModalVideoFrame.module.scss'
 
-interface LessonModalProps {
+import cn from 'classnames'
+
+import { useEffect } from 'react';
+
+interface ModalVideoFrameProps {
     onClose: () => void;
-    lessonName: string;
+    titleVideo: string;
+    src: string;
+    className?: string;
 }
 
-export default function LessonModal({ onClose, lessonName }: LessonModalProps) {
+export default function ModalVideoFrame({ onClose, titleVideo, src, className }: ModalVideoFrameProps) {
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === 'Escape') onClose()
@@ -25,14 +30,14 @@ export default function LessonModal({ onClose, lessonName }: LessonModalProps) {
                 className={s.modal}
                 onClick={e => e.stopPropagation()}>
                 <iframe
-                    src='https://www.youtube.com/embed/ADPAY0opHWI'
-                    title={lessonName}
+                    src={src}
+                    title={titleVideo}
                     allow='encrypted-media;'
                     allowFullScreen
-                    className={s.iframe}
+                    className={cn(s.iframe, className)}
                 />
-                <h2 className={s.lesson_name}>
-                    {lessonName}
+                <h2>
+                    {titleVideo}
                 </h2>
             </div>
         </div>

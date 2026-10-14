@@ -1,18 +1,3 @@
-.headerDashboard {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.title {
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: fluid(20, 34);
-    line-height: 124%;
-    letter-spacing: -0.02em;
-    color: var(--color-dark-blue);
-}
-
 .widgetsGrid {
     display: grid;
     grid-template-columns: (1fr 1fr);

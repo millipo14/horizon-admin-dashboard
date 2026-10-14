@@ -1,4 +1,4 @@
-import type { LessonAvatars } from "../types/mocksTypes";
+import type { LessonAvatars } from "../../types/mocksDashboardPageTypes";
 
 export const lessonAvatarsMock: LessonAvatars[] = [
     {

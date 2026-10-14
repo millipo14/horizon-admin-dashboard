@@ -4,7 +4,7 @@ import ChartToggle from '../../../assets/dashboard/spentChartIcons/chartToggle.s
 
 import { useState } from "react"
 
-import { weeklyOrdersMock, weeklyRevenueMock } from "../../../mocks/weeklyMock"
+import { weeklyOrdersMock, weeklyRevenueMock } from "../../../mocks/dashboardPage/weeklyMock"
 import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import WeeklyTooltip from './WeeklyTooltip'
@@ -48,4 +48,3 @@ export default function WeeklyRevenue() {
         </DashboardLayout>
     )
 }
- 

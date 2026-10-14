@@ -5,10 +5,10 @@ import TimeIcon from '../../../assets/dashboard/lessonCardIcons/time_lesson.svg?
 import VideoIcon from '../../../assets/dashboard/lessonCardIcons/video.svg?react'
 
 import { useState } from 'react'
-import { lessonAvatarsMock } from '../../../mocks/lessonAvatars'
+import { lessonAvatarsMock } from '../../../mocks/dashboardPage/lessonAvatars'
 
 import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
-import LessonModal from './LessonModal/LessonModal'
+import ModalVideoFrame from '../../UI/ModalVideoFrame/ModalVideoFrame'
 
 
 const lessonName = 'What do you need to know to create better products ? '
@@ -72,12 +72,14 @@ export default function LessonCard() {
                     </button>
                 </div>
             </div>
-            {
-                isOpen && <LessonModal
+            {isOpen && (
+                <ModalVideoFrame
                     onClose={() => setIsOpen(false)}
-                    lessonName={lessonName}
+                    titleVideo={lessonName}
+                    src="https://www.youtube.com/embed/ADPAY0opHWI"
+                    className={s.iframe}
                 />
-            }
+            )}
         </DashboardLayout>
     )
 }

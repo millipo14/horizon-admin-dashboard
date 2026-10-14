@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import SelectStorage from '../../UI/SelectStorage/SelectStorage'
 import s from './StorageChart.module.scss'
-import type { StoragePeriod } from '../../../types/mocksTypes'
-import { storageMock } from '../../../mocks/storageMock'
+import type { StoragePeriod } from '../../../types/mocksDashboardPageTypes'
+import { storageMock } from '../../../mocks/dashboardPage/storageMock'
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
 import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
 

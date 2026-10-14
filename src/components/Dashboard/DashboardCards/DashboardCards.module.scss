@@ -1,5 +1,5 @@
 .listCards {
-    margin: fluid(12, 20) 0;
+    margin-bottom: rem(20);
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: fluid(12, 20);

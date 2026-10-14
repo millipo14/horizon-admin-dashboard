@@ -1,0 +1,63 @@
+.banner {
+    background-image: url('../../../assets/nft/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: rem(345);
+    border-radius: rem(24);
+    padding: rem(55.5) rem(64);
+}
+
+.title {
+    max-width: rem(377);
+    font-size: rem(34);
+    letter-spacing: -0.02em;
+    color: var(--color-light);
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: rem(16);
+    letter-spacing: -0.02em;
+    color: var(--color-white-grey);
+}
+
+.buttons {
+    margin-top: rem(41);
+
+    display: flex;
+    gap: rem(38);
+}
+
+.discover {
+    background-color: var(--color-light);
+    border-radius: rem(14);
+
+    padding: rem(11) rem(27);
+    font-weight: 500;
+    font-size: rem(14);
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: var(--color-light-grey);
+        color: var(--color-background);
+    }
+}
+
+.watch {
+    font-weight: 500;
+    font-size: rem(16);
+    letter-spacing: -0.02em;
+    color: var(--color-white-light);
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: var(--color-black);
+    }
+}

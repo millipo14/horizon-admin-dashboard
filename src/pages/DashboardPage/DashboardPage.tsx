@@ -1,8 +1,6 @@
 import s from './DashboardPage.module.scss'
 
-import Breadcrumbs from '../../components/UI/Breadcrumbs/Breadcrumbs'
 import DashboardCards from '../../components/Dashboard/DashboardCards/DashboardCards'
-import Search from '../../components/Dashboard/Search/Search'
 import SpentChart from '../../components/Dashboard/SpentChart/SpentChart'
 import WeeklyRevenue from '../../components/Dashboard/WeeklyRevenue/WeeklyRevenue'
 import CheckTable from '../../components/Dashboard/CheckTable/CheckTable'
@@ -15,19 +13,13 @@ import LessonCard from '../../components/Dashboard/LessonCard/LessonCard'
 import TeamMembersCard from '../../components/Dashboard/TeamMembersCard/TeamMembersCard'
 import PromoCard from '../../components/Dashboard/PromoCard/PromoCard'
 import OfferCard from '../../components/Dashboard/OfferCard/OfferCard'
+import PageLayout from '../PageLayout/PageLayout'
 
 export default function DashboardPage() {
   return (
-    <main>
-      <header className={s.headerDashboard}>
-        <div className={s.leftSection}>
-          <Breadcrumbs />
-          <h1 className={s["title"]}>Main Dashboard</h1>
-        </div>
-        <div className={s.rightSection}>
-          <Search />
-        </div>
-      </header>
+    <PageLayout
+      title='Main Dashboard'
+    >
       <section aria-label="Summary statistics">
         <DashboardCards />
       </section>
@@ -54,6 +46,6 @@ export default function DashboardPage() {
           <OfferCard />
         </div>
       </section>
-    </main>
+    </PageLayout>
   )
 }

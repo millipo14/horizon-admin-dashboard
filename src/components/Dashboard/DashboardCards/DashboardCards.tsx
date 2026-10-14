@@ -2,11 +2,11 @@ import s from './DashboardCards.module.scss'
 
 import ArrowSelect from '../../../assets/dashboard/cardIcons/arrowSelect.svg?react'
 
-import { dashboardCardsData } from '../../../mocks/dashboardData'
+import { dashboardCardsData } from '../../../mocks/dashboardPage/dashboardData'
 import { useState } from 'react'
 
 import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
-import type { Currencies } from '../../../types/mocksTypes'
+import type { Currencies } from '../../../types/mocksDashboardPageTypes'
 
 export default function DashboardCards() {
     const [option, setOption] = useState<Currencies>('USD')

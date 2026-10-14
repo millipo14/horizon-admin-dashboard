@@ -1,6 +1,6 @@
 import s from './WeeklyRevenue.module.scss';
 
-import type { WeeklyDataType, WeeklyPeriod } from '../../../types/mocksTypes';
+import type { WeeklyDataType, WeeklyPeriod } from '../../../types/mocksDashboardPageTypes';
 
 interface WeeklyItem {
     dataKey: keyof Omit<WeeklyDataType, 'day'>;

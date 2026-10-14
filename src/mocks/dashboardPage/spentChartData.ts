@@ -1,4 +1,4 @@
-import type { SpentPeriodData, SpentChartData, SpentPeriod } from '../types/mocksTypes';
+import type { SpentPeriodData, SpentChartData, SpentPeriod } from '../../types/mocksDashboardPageTypes';
 
 const fullYearData: SpentChartData[] = [
     { month: 'MAR', currentSpent: 30, prevSpent: 28 },

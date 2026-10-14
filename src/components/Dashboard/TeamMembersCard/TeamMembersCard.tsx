@@ -3,14 +3,14 @@ import s from './TeamMembersCard.module.scss'
 import AddBtn from '../../../assets/dashboard/icons/addBtn.svg?react'
 import MoreBtn from '../../../assets/dashboard/icons/moreVert.svg?react'
 
-import { teamMembersMock } from '../../../mocks/teamMembers'
+import { teamMembersMock } from '../../../mocks/dashboardPage/teamMembers'
 import { useState } from 'react'
 
 import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
 import ListParticipants from './ListParticipants'
 import ActionButton from '../../UI/BtnDelete/ActionButton'
 
-import type { TeamMembersType } from '../../../types/mocksTypes'
+import type { TeamMembersType } from '../../../types/mocksDashboardPageTypes'
 
 export default function TeamMembersCard() {
     const [isOpenParticipants, setIsOpenParticipants] = useState(false)

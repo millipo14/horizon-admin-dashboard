@@ -1,4 +1,4 @@
-import type { DailyTrafficType } from "../types/mocksTypes";
+import type { DailyTrafficType } from "../../types/mocksDashboardPageTypes";
 
 export const dailyTrafficMock: DailyTrafficType = {
     id: 1,

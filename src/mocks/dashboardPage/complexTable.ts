@@ -1,4 +1,4 @@
-import type { ComplexTableDataType } from "../types/mocksTypes";
+import type { ComplexTableDataType } from "../../types/mocksDashboardPageTypes";
 
 export const complexTableMock: ComplexTableDataType[] = [
     {

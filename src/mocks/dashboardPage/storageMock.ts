@@ -1,4 +1,4 @@
-import type { StorageDataType, StoragePeriod } from "../types/mocksTypes";
+import type { StorageDataType, StoragePeriod } from "../../types/mocksDashboardPageTypes";
 
 export const storageMock: Record<StoragePeriod, StorageDataType[]> = {
     weekly: [

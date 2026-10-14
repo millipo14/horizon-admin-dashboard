@@ -1,4 +1,4 @@
-import type { StoragePeriod } from '../../../types/mocksTypes'
+import type { StoragePeriod } from '../../../types/mocksDashboardPageTypes'
 import s from './SelectStorage.module.scss'
 
 import { FormControl, MenuItem, Select, type SelectChangeEvent } from '@mui/material'

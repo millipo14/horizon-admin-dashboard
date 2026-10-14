@@ -1,4 +1,4 @@
-import type { WeeklyDataType } from "../types/mocksTypes";
+import type { WeeklyDataType } from "../../types/mocksDashboardPageTypes";
 
 export const weeklyRevenueMock: WeeklyDataType[] = [
     { day: 'Mon', online: 4200, retail: 2800, partners: 1900 },

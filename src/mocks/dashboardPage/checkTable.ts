@@ -1,4 +1,4 @@
-import type { TableDataType } from "../types/mocksTypes";
+import type { TableDataType } from "../../types/mocksDashboardPageTypes";
 
 export const checkTablesMock: TableDataType[] = [
     {
