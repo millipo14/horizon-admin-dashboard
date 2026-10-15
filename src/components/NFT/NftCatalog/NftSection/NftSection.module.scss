@@ -1,4 +1,4 @@
-.sectionTitle{
+.sectionTitle {
     margin: 0 0 rem(20) rem(20);
 }
 
@@ -9,7 +9,41 @@
 }
 
 .card {
+    position: relative;
+
     padding: rem(21);
+}
+
+.favorite {
+    position: absolute;
+    top: rem(35);
+    right: rem(35);
+}
+
+.like {
+    color: rgb(216, 80, 137);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: var(--color-light-grey);
+    }
+
+    &:active {
+        color: rgb(212, 120, 158);
+    }
+}
+
+.notLike {
+    color: var(--color-light);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        color: var(--color-light-grey);
+    }
+
+    &:active {
+        color: rgb(212, 120, 158);
+    }
 }
 
 .image {
@@ -17,27 +51,31 @@
     max-width: rem(308);
 }
 
-.content{
+.content {
     padding-inline: rem(9);
 }
+
 .info {
-    // обёртка текстовой части
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .titles {
-    // обёртка title + author
+    margin-block: rem(20);
 }
 
 .title {
-    // название NFT
+    font-size: rem(18);
+    letter-spacing: -0.02em;
+    color: var(--color-dark-blue2);
 }
 
 .author {
-    // автор
-}
-
-.bidders {
-    // контейнер под AvatarGroup
+    font-weight: 400;
+    font-size: rem(14);
+    letter-spacing: -0.02em;
+    color: var(--color-light-grey);
 }
 
 .footer {
@@ -47,7 +85,28 @@
 }
 
 .bid {
-    // стили текста "Current Bid: ..."
+    font-weight: 700;
+    font-size: rem(14);
+    letter-spacing: -0.02em;
+    color: var(--color-blue);
 }
 
-.btn {}
+.btn {
+    padding: rem(5) rem(24);
+
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: 171%;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--color-light);
+
+    background-color: #11047A;
+    border-radius: rem(17);
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: var(--color-blue);
+    }
+}

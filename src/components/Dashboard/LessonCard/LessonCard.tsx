@@ -9,6 +9,7 @@ import { lessonAvatarsMock } from '../../../mocks/dashboardPage/lessonAvatars'
 
 import DashboardLayout from '../../UI/DashboardLayout/DashboardLayout'
 import ModalVideoFrame from '../../UI/ModalVideoFrame/ModalVideoFrame'
+import Avatars from '../../UI/Avatars/Avatars'
 
 
 const lessonName = 'What do you need to know to create better products ? '
@@ -49,21 +50,10 @@ export default function LessonCard() {
                     </div>
                 </div>
                 <div className={s.footer}>
-                    <div className={s.participants}>
-                        {
-                            viewAvatar.map(avatar =>
-                                <img
-                                    key={avatar.id}
-                                    src={avatar.avatar}
-                                    alt='avatar'
-                                    className={s.avatar}
-                                />
-                            )
-                        }
-                        <div className={s.remaining}>
-                            {countRemaining}+
-                        </div>
-                    </div>
+                    <Avatars
+                        count={countRemaining}
+                        avatars={viewAvatar.map(avatar => avatar.avatar)}
+                    />
                     <button
                         type="button"
                         onClick={() => setIsOpen(true)}

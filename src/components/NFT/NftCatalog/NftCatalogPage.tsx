@@ -6,10 +6,20 @@ import { categoryTabs } from "../../../mocks/nft/categoryTabs";
 import CategoryTabs from "./CategoryTabs/CategoryTabs";
 import NftSection from "./NftSection/NftSection";
 import { catalogCards } from '../../../mocks/nft/catalog';
+import type { CatalogCardType } from '../../../types/mocksNftTypes';
 
 
 export default function NftCatalog() {
     const [activeTab, setActiveTab] = useState<number>(categoryTabs[0].id)
+    const [cards, setCards] = useState<CatalogCardType[]>(catalogCards)
+
+    const handleLike = (id: number) => {
+        setCards(prevCards => prevCards.map(card => (
+            card.id === id ?
+                { ...card, liked: !card.liked }
+                : card
+        )))
+    }
 
     return (
         <div className={s.catalog}>
@@ -26,11 +36,13 @@ export default function NftCatalog() {
 
             <div className={s.sections}>
                 <NftSection
-                    cards={catalogCards.filter(card => card.section === 'trending')}
+                    cards={cards.filter(card => card.section === 'trending')}
+                    onLike={handleLike}
                 />
                 <NftSection
                     title='Recently Added'
-                    cards={catalogCards.filter(card => card.section === 'recently')}
+                    cards={cards.filter(card => card.section === 'recently')}
+                    onLike={handleLike}
                 />
             </div>
         </div>
