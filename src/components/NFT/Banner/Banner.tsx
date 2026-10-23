@@ -32,8 +32,8 @@ export default function Banner() {
             {
                 openModal &&
                 <ModalVideoFrame
-                onClose={()=>setOpenModal(false)}
-                titleVideo='nft info'
+                    onClose={() => setOpenModal(false)}
+                    titleVideo='nft info'
                     src="https://www.youtube.com/embed/rylhU4Fe74Y"
                 />
             }

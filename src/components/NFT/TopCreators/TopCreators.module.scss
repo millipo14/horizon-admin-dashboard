@@ -1,0 +1,81 @@
+@mixin table-grid {
+    display: grid;
+    grid-template-columns: rem(155) rem(185) rem(70);
+    align-items: center;
+}
+
+.columns {
+    @include table-grid;
+    padding-bottom: rem(11);
+    font-weight: 500;
+    font-size: rem(14);
+    letter-spacing: -0.02em;
+    color: var(--color-light-grey);
+
+    box-shadow: 0 18px 40px 0 rgba(112, 144, 176, 0.12);
+    background: var(--color-light);
+    margin-inline: rem(-21);
+    padding-inline: rem(21);
+
+    span:nth-child(2) {
+        text-align: center;
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(21);
+    margin-top: rem(19);
+}
+
+.row {
+    @include table-grid;
+}
+
+.nameCol {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+}
+
+.avatar {
+    width: rem(30);
+    height: rem(30);
+    border-radius: rem(12);
+    object-fit: cover;
+}
+
+.username {
+    font-weight: 700;
+    font-size: rem(14);
+    letter-spacing: -0.02em;
+    color: var(--color-dark-blue);
+}
+
+.artworksCol {
+    font-weight: 500;
+    font-size: rem(14);
+    letter-spacing: -0.02em;
+    color: var(--color-light-grey);
+    text-align: center;
+}
+
+.ratingCol {
+    display: flex;
+    align-items: center;
+}
+
+.ratingBar {
+    width: 100%;
+    height: rem(8);
+    background-color: #c8ccd1;
+    border-radius: rem(21);
+    overflow: hidden;
+}
+
+.ratingFill {
+    height: 100%;
+    background-color: var(--color-blue);
+    border-radius: rem(21);
+}

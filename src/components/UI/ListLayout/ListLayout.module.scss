@@ -1,0 +1,36 @@
+.padding {
+    padding: rem(19) rem(21);
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: rem(20);
+    letter-spacing: -0.02em;
+    color: var(--color-dark-blue2);
+}
+
+.buttonAll {
+    padding: rem(4) rem(18);
+
+    border-radius: rem(70);
+    background-color: var(--color-background);
+    font-weight: 500;
+    font-size: rem(14);
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--color-blue);
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        background-color: var(--color-light-grey);
+    }
+}
+
+.children {
+    margin-top: rem(29);
+}

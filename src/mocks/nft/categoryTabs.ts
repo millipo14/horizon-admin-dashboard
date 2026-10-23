@@ -2,6 +2,10 @@ import type { CategoryTabType } from "../../types/mocksNftTypes";
 
 export const categoryTabs: CategoryTabType[] = [
     {
+        id: 0,
+        label: 'All'
+    },
+    {
         id: 1,
         label: 'Art'
     },

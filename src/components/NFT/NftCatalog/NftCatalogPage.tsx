@@ -13,6 +13,8 @@ export default function NftCatalog() {
     const [activeTab, setActiveTab] = useState<number>(categoryTabs[0].id)
     const [cards, setCards] = useState<CatalogCardType[]>(catalogCards)
 
+    const filteredCards = cards.filter(card => activeTab === 0 || card.categoryId === activeTab)
+
     const handleLike = (id: number) => {
         setCards(prevCards => prevCards.map(card => (
             card.id === id ?
@@ -36,12 +38,12 @@ export default function NftCatalog() {
 
             <div className={s.sections}>
                 <NftSection
-                    cards={cards.filter(card => card.section === 'trending')}
+                    cards={filteredCards.filter(card => card.section === 'trending')}
                     onLike={handleLike}
                 />
                 <NftSection
                     title='Recently Added'
-                    cards={cards.filter(card => card.section === 'recently')}
+                    cards={filteredCards.filter(card => card.section === 'recently')}
                     onLike={handleLike}
                 />
             </div>

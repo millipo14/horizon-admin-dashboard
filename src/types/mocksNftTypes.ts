@@ -1,4 +1,4 @@
-export type CategoryType = 'Art' | 'Music' | 'Collectibles' | 'Sports'
+export type CategoryType = 'All' | 'Art' | 'Music' | 'Collectibles' | 'Sports'
 
 export interface CategoryTabType {
     id: number;
@@ -19,4 +19,18 @@ export interface CatalogCardType {
     extraBiddersCount: number;
     categoryId: number;
     section: NftSection;
+}
+
+// top creators
+
+export interface TopCreatorType {
+    id: number;
+    avatar: string;
+    username: string;
+    artworks: number;
+    rating: number;
+}
+
+export interface HistoryType extends Pick<CatalogCardType, 'id' | 'image' | 'title' | 'author' | 'currentBid'> {
+    time: string;
 }

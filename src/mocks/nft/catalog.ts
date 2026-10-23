@@ -8,7 +8,7 @@ import img6 from '../../assets/nft/cards_background/6.png'
 import type { CatalogCardType } from "../../types/mocksNftTypes";
 
 export const catalogCards: CatalogCardType[] = [
-    // ─── Trending NFTs ───
+    // Trending NFTs
     {
         id: 1,
         image: img1,
@@ -23,7 +23,7 @@ export const catalogCards: CatalogCardType[] = [
             'https://i.pravatar.cc/150?img=4',
         ],
         extraBiddersCount: 18,
-        categoryId: 1,
+        categoryId: 1, // Art
         section: 'trending',
     },
     {
@@ -39,7 +39,7 @@ export const catalogCards: CatalogCardType[] = [
             'https://i.pravatar.cc/150?img=7',
         ],
         extraBiddersCount: 1,
-        categoryId: 1,
+        categoryId: 3, // Collectibles
         section: 'trending',
     },
     {
@@ -55,11 +55,11 @@ export const catalogCards: CatalogCardType[] = [
             'https://i.pravatar.cc/150?img=10',
         ],
         extraBiddersCount: 5,
-        categoryId: 1,
+        categoryId: 1, // Art
         section: 'trending',
     },
 
-    // ─── Recently Added ───
+    // Recently Added
     {
         id: 4,
         image: img4,
@@ -72,7 +72,7 @@ export const catalogCards: CatalogCardType[] = [
             'https://i.pravatar.cc/150?img=12',
         ],
         extraBiddersCount: 10,
-        categoryId: 1,
+        categoryId: 2, // Music
         section: 'recently',
     },
     {
@@ -88,7 +88,7 @@ export const catalogCards: CatalogCardType[] = [
             'https://i.pravatar.cc/150?img=15',
         ],
         extraBiddersCount: 18,
-        categoryId: 1,
+        categoryId: 4, // Sports
         section: 'recently',
     },
     {
@@ -105,7 +105,7 @@ export const catalogCards: CatalogCardType[] = [
             'https://i.pravatar.cc/150?img=19',
         ],
         extraBiddersCount: 7,
-        categoryId: 1,
+        categoryId: 3, // Collectibles
         section: 'recently',
     },
-];
+]

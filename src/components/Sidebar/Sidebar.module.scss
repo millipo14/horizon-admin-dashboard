@@ -1,6 +1,6 @@
 .sidebar {
-    flex: 0 0 fluid(190, 310);
-    width: fluid(190, 310);
+    // flex: 0 0 fluid(190, 310);
+    max-width: rem(290);
     min-height: 100dvh;
 
     display: flex;
