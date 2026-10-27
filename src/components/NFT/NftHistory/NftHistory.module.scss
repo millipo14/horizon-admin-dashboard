@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: rem(23);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .item {

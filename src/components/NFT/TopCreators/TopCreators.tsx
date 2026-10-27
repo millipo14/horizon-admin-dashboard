@@ -2,14 +2,19 @@ import s from './TopCreators.module.scss'
 
 import ListLayout from '../../UI/ListLayout/ListLayout'
 import { topCreatorsMock } from '../../../mocks/nft/topCreators'
+import { useState } from 'react'
+import ModalLayout from '../../UI/ModalLayout/ModalLayout'
+import TopCreatorsList from './TopCreatorsList'
 
 export default function TopCreators() {
-    const filterCreator = topCreatorsMock.sort((a, b) => b.rating - a.rating)
+    const [openModal, setOpenModal] = useState<boolean>(false)
+    const sortedCreator = [...topCreatorsMock].sort((a, b) => b.rating - a.rating)
+    const title = 'Top Creators'
 
     return (
         <ListLayout
-            title='Top Creators'
-            onClick={() => { }}
+            title={title}
+            onClick={() => { setOpenModal(true) }}
         >
             <div className={s.columns}>
                 <span>
@@ -22,29 +27,18 @@ export default function TopCreators() {
                     Rating
                 </span>
             </div>
-            <ul className={s.list}>
-                {
-                    filterCreator.slice(0, 8).map(creator =>
-                        <li
-                            key={creator.id}
-                            className={s.row}>
-                            <div className={s.nameCol}>
-                                <img src={creator.avatar} className={s.avatar} />
-                                <span className={s.username}>{creator.username}</span>
-                            </div>
-                            <span className={s.artworksCol}>{creator.artworks}</span>
-                            <div className={s.ratingCol}>
-                                <div className={s.ratingBar}>
-                                    <div
-                                        className={s.ratingFill}
-                                        style={{ width: `${creator.rating}%` }}
-                                    />
-                                </div>
-                            </div>
-                        </li>
-                    )
-                }
-            </ul>
+            <TopCreatorsList
+                sortedCreator={sortedCreator.slice(0, 8)}
+            />
+
+            {
+                openModal &&
+                <ModalLayout
+                    title={title}
+                    onClose={() => setOpenModal(false)}
+                    children={<TopCreatorsList sortedCreator={sortedCreator} />}
+                />
+            }
         </ListLayout>
     )
 }
