@@ -1,8 +1,10 @@
 import s from './LayoutTable.module.scss'
 
 import MoreIcon from '../../../assets/dashboard/icons/more.svg?react'
+import SortIcon from '../../../assets/dashboard/cardIcons/arrowSelect.svg?react'
 
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import cn from 'classnames'
 
 import DashboardLayout from '../DashboardLayout/DashboardLayout'
 import { useState, type ReactNode } from 'react';
@@ -15,10 +17,11 @@ interface LayoutTableProps {
     buttonMoreText?: string;
     tableCellNames: string[];
     children: ReactNode;
+    isTablePage: boolean;
 }
 
 
-export default function LayoutTable({ title, onClickMore, buttonMoreText, tableCellNames, children }: LayoutTableProps) {
+export default function LayoutTable({ title, onClickMore, buttonMoreText, tableCellNames, children, isTablePage }: LayoutTableProps) {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -45,13 +48,32 @@ export default function LayoutTable({ title, onClickMore, buttonMoreText, tableC
             <TableContainer component={Paper} className={s.tableContainer}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
-                        <TableRow>
+                        <TableRow
+                            className={cn(isTablePage && s.tableNameList)}
+                        >
                             {
-                                tableCellNames.map(item => (
-                                    <TableCell
-                                        key={item}
-                                        className={s.headCell}>{item.toUpperCase()}</TableCell>
-                                ))
+                                tableCellNames.map(item =>
+                                    isTablePage
+                                        ? (
+                                            <TableCell
+                                            key={item}
+                                            className={s.tableCellName}>
+                                                <div className={s.cellContent}>
+                                                    <span>{item}</span>
+                                                    <span><SortIcon /></span>
+                                                </div>
+                                            </TableCell>
+
+                                        )
+                                        : (
+                                            <TableCell
+                                                key={item}
+                                                className={s.headCell}
+                                            >
+                                                {item.toUpperCase()}
+                                            </TableCell>
+                                        )
+                                )
                             }
                         </TableRow>
                     </TableHead>

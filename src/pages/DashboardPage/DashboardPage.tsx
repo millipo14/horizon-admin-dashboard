@@ -27,12 +27,12 @@ export default function DashboardPage() {
       <section className={s.widgetsGrid} aria-label="Dashboard analytics">
         <SpentChart />
         <WeeklyRevenue />
-        <CheckTable />
+        <CheckTable isTablePage={false} />
         <div className={s.graphs}>
           <DailyTraffic />
           <StorageChart />
         </div>
-        <ComlpexTable />
+        <ComlpexTable isTablePage={false} />
         <div className={s.graphs}>
           <Tasks />
           <Calendar />

@@ -43,3 +43,23 @@
         border-bottom: none;
     }
 }
+
+
+.tableCellName {
+
+    &:global(.MuiTableCell-root) {
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: 171%;
+        color: #a3aed0;
+        border-bottom: none;
+    }
+}
+
+.cellContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: rem(13);
+}

@@ -11,9 +11,10 @@ import { formatDateEU } from '../../../utils/formatDate'
 import { useState } from 'react'
 
 import type { ComplexTableDataType } from '../../../types/mocksDashboardPageTypes'
+import type { TablesProps } from '../../../types/props'
 
-export default function ComlpexTable() {
-    const names = ['NAME', 'STATUS', 'DATE', 'PROGRESS']
+export default function ComlpexTable({ isTablePage }: TablesProps) {
+    const names = ['name', 'status', 'date', 'progress']
     const [sortedTable, setSortedTable] = useState<ComplexTableDataType[]>(complexTableMock)
 
     const statusOrder = {
@@ -34,6 +35,7 @@ export default function ComlpexTable() {
             tableCellNames={names}
             buttonMoreText='Sorted by status'
             onClickMore={onClickMore}
+            isTablePage={isTablePage}
         >
             {
                 sortedTable.map(row => (

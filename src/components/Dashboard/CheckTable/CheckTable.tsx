@@ -1,20 +1,21 @@
 import s from './CheckTable.module.scss'
 
-
 import { TableCell, TableRow } from '@mui/material'
 import { checkTablesMock } from '../../../mocks/dashboardPage/checkTable'
 import CustomCheckbox from '../../UI/CustomCheckbox/CustomCheckbox'
 import { useState } from 'react'
-import type { TableDataType } from '../../../types/mocksDashboardPageTypes'
 import { formatDateUS } from '../../../utils/formatDate'
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
 
+import type { TableDataType } from '../../../types/mocksDashboardPageTypes'
+import type { TablesProps } from '../../../types/props'
 
-export default function CheckTable() {
+
+export default function CheckTable({ isTablePage }:TablesProps) {
     const [selectedId, setSelectedId] = useState<number[]>([])
     const [viewTable, setViewTable] = useState<TableDataType[]>(checkTablesMock)
 
-    const names = ['NAME', 'PROGRESS', 'QUANTITY', 'DATE']
+    const names = ['name', 'progress', 'quantity', 'date'];
 
     return (
         <LayoutTable
@@ -22,6 +23,7 @@ export default function CheckTable() {
             onClickMore={() => setViewTable(viewTable.filter((item) => !selectedId.includes(item.id)))}
             buttonMoreText='Delete selected'
             tableCellNames={names}
+            isTablePage={isTablePage}
         >
             {viewTable.slice(0, 5).map((row) => {
                 const checked = selectedId.includes(row.id)
