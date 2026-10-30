@@ -11,7 +11,7 @@ import type { TableDataType } from '../../../types/mocksDashboardPageTypes'
 import type { TablesProps } from '../../../types/props'
 
 
-export default function CheckTable({ isTablePage }:TablesProps) {
+export default function CheckTable({ isTablePage }: TablesProps) {
     const [selectedId, setSelectedId] = useState<number[]>([])
     const [viewTable, setViewTable] = useState<TableDataType[]>(checkTablesMock)
 
@@ -25,7 +25,7 @@ export default function CheckTable({ isTablePage }:TablesProps) {
             tableCellNames={names}
             isTablePage={isTablePage}
         >
-            {viewTable.slice(0, 5).map((row) => {
+            {viewTable.slice(0, isTablePage ? 11 : 5).map((row) => {
                 const checked = selectedId.includes(row.id)
                 return (
                     <TableRow key={row.id}>
