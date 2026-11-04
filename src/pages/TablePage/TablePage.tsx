@@ -4,6 +4,7 @@ import PageLayout from '../PageLayout/PageLayout'
 import CheckTable from '../../components/Tables/CheckTable/CheckTable'
 import ComlpexTable from '../../components/Tables/ComlpexTable/ComlpexTable'
 import DevelopmentTable from '../../components/Tables/DevelopmentTable/DevelopmentTable'
+import ProjectsTable from '../../components/Tables/ProjectsTable/ProjectsTable'
 
 export default function TablePage() {
   return (
@@ -13,7 +14,7 @@ export default function TablePage() {
       <div className={s.content}>
         <DevelopmentTable isTablePage={true} />
         <CheckTable isTablePage={true} />
-        <CheckTable isTablePage={true} />
+        <ProjectsTable isTablePage={true} />
         <ComlpexTable isTablePage={true} />
       </div>
     </PageLayout>

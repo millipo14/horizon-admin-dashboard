@@ -50,16 +50,6 @@ export interface WeeklyDataType { //выручка/кол-во заказов е
     partners: number;
 }
 
-//Check Tables Mocks
-
-export interface TableDataType {
-    id: number;
-    name: string;
-    progress: number;
-    quantity: number;
-    date: string;
-}
-
 // Daily Traffic Mocks
 
 export interface DailyTrafficType {
@@ -82,19 +72,6 @@ export interface StorageDataType {
     id: number;
     name: string;
     value: number;
-}
-
-
-//Complex Tables Mocks
-
-export type StatusComplexTable = 'approved' | 'disable' | 'error'
-
-export interface ComplexTableDataType {
-    id: number;
-    name: string;
-    status: StatusComplexTable;
-    date: string;
-    progress: number;
 }
 
 
