@@ -1,15 +1,13 @@
-import s from './CheckTable.module.scss'
-
 import { TableCell, TableRow } from '@mui/material'
-import { checkTablesMock } from '../../../mocks/dashboardPage/checkTable'
+
 import CustomCheckbox from '../../UI/CustomCheckbox/CustomCheckbox'
 import { useState } from 'react'
 import { formatDateUS } from '../../../utils/formatDate'
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
+import { checkTablesMock } from '../../../mocks/tables/checkTable'
 
-import type { TableDataType } from '../../../types/mocksDashboardPageTypes'
 import type { TablesProps } from '../../../types/props'
-
+import type { TableDataType } from '../../../types/mockTablesTypes'
 
 export default function CheckTable({ isTablePage }: TablesProps) {
     const [selectedId, setSelectedId] = useState<number[]>([])
@@ -29,20 +27,20 @@ export default function CheckTable({ isTablePage }: TablesProps) {
                 const checked = selectedId.includes(row.id)
                 return (
                     <TableRow key={row.id}>
-                        <TableCell className={s.bodyCell}>
+                        <TableCell>
                             <CustomCheckbox checked={checked} onChange={(check) => check ? setSelectedId([...selectedId, row.id]) : setSelectedId(selectedId.filter(id => id !== row.id))} />
                             {row.name}
                         </TableCell>
 
-                        <TableCell className={s.bodyCell}>
+                        <TableCell>
                             {row.progress}%
                         </TableCell>
 
-                        <TableCell className={s.bodyCell}>
+                        <TableCell>
                             {row.quantity.toLocaleString('de-DE')}
                         </TableCell>
 
-                        <TableCell className={s.bodyCell}>
+                        <TableCell>
                             {formatDateUS(row.date)}
                         </TableCell>
                     </TableRow>

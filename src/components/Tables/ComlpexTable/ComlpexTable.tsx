@@ -5,13 +5,21 @@ import DisableIcon from '../../../assets/dashboard/complexTableIcons/disable.svg
 import ErrorIcon from '../../../assets/dashboard/complexTableIcons/error.svg?react'
 
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
-import { complexTableMock } from '../../../mocks/dashboardPage/complexTable'
-import { Box, LinearProgress, TableCell, TableRow } from '@mui/material'
-import { formatDateEU } from '../../../utils/formatDate'
-import { useState } from 'react'
 
-import type { ComplexTableDataType } from '../../../types/mocksDashboardPageTypes'
+import { TableCell, TableRow } from '@mui/material'
+import { formatDateEU } from '../../../utils/formatDate'
+import { useState, type ComponentType } from 'react'
+import { complexTableMock } from '../../../mocks/tables/complexTable'
+
 import type { TablesProps } from '../../../types/props'
+import type { ComplexTableDataType } from '../../../types/mockTablesTypes'
+import ProgressBar from '../../UI/ProgressBar/ProgressBar'
+
+const statusConfig: Record<string, ComponentType> = {
+    approved: ApprovedIcon,
+    disable: DisableIcon,
+    error: ErrorIcon,
+}
 
 export default function ComlpexTable({ isTablePage }: TablesProps) {
     const names = ['name', 'status', 'date', 'progress']
@@ -40,39 +48,30 @@ export default function ComlpexTable({ isTablePage }: TablesProps) {
             {
                 sortedTable.map(row => (
                     <TableRow key={row.id}>
-                        <TableCell className={s.bodyCell}>
+                        <TableCell>
                             {row.name}
                         </TableCell>
 
-                        <TableCell className={s.bodyCell}>
-                            {
-                                row.status === 'approved'
-                                    ? <div className={s.status}>
-                                        <ApprovedIcon /> <span>{row.status}</span>
+                        <TableCell>
+                            {(() => {
+                                const Icon = statusConfig[row.status]
+                                return (
+                                    <div className={s.status}>
+                                        <Icon />
+                                        <span>{row.status}</span>
                                     </div>
-                                    : row.status === 'disable'
-                                        ? <div className={s.status}>
-                                            <DisableIcon /> <span>{row.status}</span>
-                                        </div>
-                                        : <div className={s.status}>
-                                            <ErrorIcon /> <span>{row.status}</span>
-                                        </div>
-
-                            }
+                                )
+                            })()}
                         </TableCell>
 
-                        <TableCell className={s.bodyCell}>
+                        <TableCell>
                             {formatDateEU(row.date)}
                         </TableCell>
 
-                        <TableCell className={s.bodyCell}>
-                            <Box sx={{ width: '108px' }}>
-                                <LinearProgress
-                                    variant='determinate'
-                                    value={row.progress}
-                                    className={s.progress}
-                                />
-                            </Box>
+                        <TableCell>
+                            <ProgressBar
+                                value={row.progress}
+                            />
                         </TableCell>
                     </TableRow>
                 ))

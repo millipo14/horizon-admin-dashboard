@@ -1,49 +1,45 @@
 import s from './DevelopmentTable.module.scss'
 
-import cn from 'classnames'
-import { Box, LinearProgress, TableCell, TableRow } from '@mui/material'
+import { TableCell, TableRow } from '@mui/material'
 import { developmentTableMock } from '../../../mocks/tables/developmentTable'
 import { formatDateUS } from '../../../utils/formatDate'
 
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
 
 import type { TablesProps } from '../../../types/props'
+import ProgressBar from '../../UI/ProgressBar/ProgressBar'
 
 export default function DevelopmentTable({ isTablePage }: TablesProps) {
     const names = ['Name', 'Platform', 'Date', 'Progress']
     return (
         <LayoutTable
-            title='DevelopmentTable'
+            title='Development Table'
             tableCellNames={names}
             isTablePage={isTablePage}
         >
             {developmentTableMock.map((row) => (
                 <TableRow key={row.id}>
-                    <TableCell className={s.bodyCell}>
+                    <TableCell>
                         {row.name}
                     </TableCell>
 
-                    <TableCell className={cn(s.bodyCell, s.platforms)}>
+                    <TableCell className={s.platforms}>
                         {row.platforms.map((Icon, index) => (
-                            <div>
-                                <Icon key={index} />
+                            <div key={index}>
+                                <Icon />
                             </div>
                         ))}
                     </TableCell>
 
-                    <TableCell className={s.bodyCell}>
+                    <TableCell>
                         {formatDateUS(row.date)}
                     </TableCell>
 
-                    <TableCell className={cn(s.bodyCell, s.progress)}>
-                        <span>{row.progress}%</span>
-                        <Box sx={{ width: '108px' }}>
-                            <LinearProgress
-                                variant='determinate'
-                                value={row.progress}
-                                className={s.progressBar}
-                            />
-                        </Box>
+                    <TableCell>
+                        <ProgressBar
+                            label={row.progress}
+                            value={row.progress}
+                        />
                     </TableCell>
 
                 </TableRow>

@@ -1,0 +1,18 @@
+.progress {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: rem(6);
+}
+
+.progressBar {
+    border-radius: rem(21);
+    height: rem(8);
+
+    background-color: #eff4fb;
+
+    :global(.MuiLinearProgress-bar) {
+        background-color: var(--color-blue);
+        border-radius: rem(21);
+    }
+}

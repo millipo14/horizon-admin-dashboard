@@ -52,15 +52,15 @@ export default function LayoutTable({ title, onClickMore, buttonMoreText, tableC
                             className={cn(isTablePage && s.tableNameList)}
                         >
                             {
-                                tableCellNames.map(item =>
+                                tableCellNames.map((item, index) =>
                                     isTablePage
                                         ? (
                                             <TableCell
-                                            key={item}
-                                            className={s.tableCellName}>
+                                                key={item}
+                                                className={s.tableCellName}>
                                                 <div className={s.cellContent}>
-                                                    <span>{item}</span>
-                                                    <span><SortIcon /></span>
+                                                    <span>{item != item[0] && item}</span>
+                                                    {index !== 0 && <span><SortIcon /></span>}
                                                 </div>
                                             </TableCell>
 
@@ -77,7 +77,7 @@ export default function LayoutTable({ title, onClickMore, buttonMoreText, tableC
                             }
                         </TableRow>
                     </TableHead>
-                    <TableBody >
+                    <TableBody className={s.tableBody}>
                         {children}
                     </TableBody>
                 </Table>
