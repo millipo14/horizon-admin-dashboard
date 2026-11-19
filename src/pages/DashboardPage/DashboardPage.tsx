@@ -32,7 +32,7 @@ export default function DashboardPage() {
           <DailyTraffic />
           <StorageChart />
         </div>
-        <ComlpexTable isTablePage={false} />
+        <ComlpexTable />
         <div className={s.graphs}>
           <Tasks />
           <Calendar />

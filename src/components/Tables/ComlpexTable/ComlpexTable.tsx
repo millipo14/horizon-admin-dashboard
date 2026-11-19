@@ -11,7 +11,6 @@ import { formatDateEU } from '../../../utils/formatDate'
 import { useState, type ComponentType } from 'react'
 import { complexTableMock } from '../../../mocks/tables/complexTable'
 
-import type { TablesProps } from '../../../types/props'
 import type { ComplexTableDataType } from '../../../types/mockTablesTypes'
 import ProgressBar from '../../UI/ProgressBar/ProgressBar'
 
@@ -21,7 +20,7 @@ const statusConfig: Record<string, ComponentType> = {
     error: ErrorIcon,
 }
 
-export default function ComlpexTable({ isTablePage }: TablesProps) {
+export default function ComlpexTable() {
     const names = ['name', 'status', 'date', 'progress']
     const [sortedTable, setSortedTable] = useState<ComplexTableDataType[]>(complexTableMock)
 
@@ -43,7 +42,6 @@ export default function ComlpexTable({ isTablePage }: TablesProps) {
             tableCellNames={names}
             buttonMoreText='Sorted by status'
             onClickMore={onClickMore}
-            isTablePage={isTablePage}
         >
             {
                 sortedTable.map(row => (

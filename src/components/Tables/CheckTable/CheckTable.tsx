@@ -6,8 +6,11 @@ import { formatDateUS } from '../../../utils/formatDate'
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
 import { checkTablesMock } from '../../../mocks/tables/checkTable'
 
-import type { TablesProps } from '../../../types/props'
 import type { TableDataType } from '../../../types/mockTablesTypes'
+
+type TablesProps = {
+    isTablePage: boolean;
+}
 
 export default function CheckTable({ isTablePage }: TablesProps) {
     const [selectedId, setSelectedId] = useState<number[]>([])
@@ -21,7 +24,6 @@ export default function CheckTable({ isTablePage }: TablesProps) {
             onClickMore={() => setViewTable(viewTable.filter((item) => !selectedId.includes(item.id)))}
             buttonMoreText='Delete selected'
             tableCellNames={names}
-            isTablePage={isTablePage}
         >
             {viewTable.slice(0, isTablePage ? 11 : 5).map((row) => {
                 const checked = selectedId.includes(row.id)

@@ -1,10 +1,8 @@
 import s from './LayoutTable.module.scss'
 
 import MoreIcon from '../../../assets/dashboard/icons/more.svg?react'
-import SortIcon from '../../../assets/dashboard/cardIcons/arrowSelect.svg?react'
 
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-import cn from 'classnames'
 
 import DashboardLayout from '../DashboardLayout/DashboardLayout'
 import { useState, type ReactNode } from 'react';
@@ -17,11 +15,10 @@ interface LayoutTableProps {
     buttonMoreText?: string;
     tableCellNames: string[];
     children: ReactNode;
-    isTablePage: boolean;
 }
 
 
-export default function LayoutTable({ title, onClickMore, buttonMoreText, tableCellNames, children, isTablePage }: LayoutTableProps) {
+export default function LayoutTable({ title, onClickMore, buttonMoreText, tableCellNames, children }: LayoutTableProps) {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
@@ -39,7 +36,7 @@ export default function LayoutTable({ title, onClickMore, buttonMoreText, tableC
 
                     {isOpen && onClickMore && buttonMoreText &&
                         <ActionButton
-                            onClick={onClickMore}
+                            onClick={() => { onClickMore(); setIsOpen(false) }}
                             textBtn={buttonMoreText}
                         />
                     }
@@ -49,30 +46,18 @@ export default function LayoutTable({ title, onClickMore, buttonMoreText, tableC
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow
-                            className={cn(isTablePage && s.tableNameList)}
+                            className={s.tableNameList}
                         >
                             {
-                                tableCellNames.map((item, index) =>
-                                    isTablePage
-                                        ? (
-                                            <TableCell
-                                                key={item}
-                                                className={s.tableCellName}>
-                                                <div className={s.cellContent}>
-                                                    <span>{item != item[0] && item}</span>
-                                                    {index !== 0 && <span><SortIcon /></span>}
-                                                </div>
-                                            </TableCell>
-
-                                        )
-                                        : (
-                                            <TableCell
-                                                key={item}
-                                                className={s.headCell}
-                                            >
-                                                {item.toUpperCase()}
-                                            </TableCell>
-                                        )
+                                tableCellNames.map((item) =>
+                                (
+                                    <TableCell
+                                        key={item}
+                                        className={s.headCell}
+                                    >
+                                        {item.toUpperCase()}
+                                    </TableCell>
+                                )
                                 )
                             }
                         </TableRow>

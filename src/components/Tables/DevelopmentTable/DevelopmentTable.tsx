@@ -6,18 +6,27 @@ import { formatDateUS } from '../../../utils/formatDate'
 
 import LayoutTable from '../../UI/LayoutTable/LayoutTable'
 
-import type { TablesProps } from '../../../types/props'
 import ProgressBar from '../../UI/ProgressBar/ProgressBar'
+import { useState } from 'react'
 
-export default function DevelopmentTable({ isTablePage }: TablesProps) {
+export default function DevelopmentTable() {
+
     const names = ['Name', 'Platform', 'Date', 'Progress']
+
+    const [onlyMulti, setOnlyMulti] = useState(false)
+
+    const rows = onlyMulti
+        ? developmentTableMock.filter(row => row.platforms.length > 1)
+        : developmentTableMock
+
     return (
         <LayoutTable
             title='Development Table'
             tableCellNames={names}
-            isTablePage={isTablePage}
+            buttonMoreText={onlyMulti ? 'Show all platforms' : 'Multi-platform only'}
+            onClickMore={() => setOnlyMulti(prev => !prev)}
         >
-            {developmentTableMock.map((row) => (
+            {rows.map((row) => (
                 <TableRow key={row.id}>
                     <TableCell>
                         {row.name}

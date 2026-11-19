@@ -12,10 +12,10 @@ export default function TablePage() {
       title='Tables'
     >
       <div className={s.content}>
-        <DevelopmentTable isTablePage={true} />
+        <DevelopmentTable />
         <CheckTable isTablePage={true} />
-        <ProjectsTable isTablePage={true} />
-        <ComlpexTable isTablePage={true} />
+        <ProjectsTable />
+        <ComlpexTable />
       </div>
     </PageLayout>
   )
